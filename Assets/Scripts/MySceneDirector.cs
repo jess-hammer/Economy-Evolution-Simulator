@@ -8,6 +8,8 @@ public class MySceneDirector : Director
     public MyCreature creaturePrefab;
     public int nCreatures;
     public GameObject creatureParent;
+    private float RADIUS = 4f;
+    private float HEIGHT = 0.3f;
 
     protected override void Awake() {
         base.Awake();
@@ -22,10 +24,37 @@ public class MySceneDirector : Director
 
     protected void spawnBlobs(int n) {
         for (int i = 0; i < n; i++) {
-            MyCreature newCreature = Instantiate(creaturePrefab, creatureParent.transform.position, Quaternion.identity);
+            Vector3 homePos = getHomePos(i);
+            MyCreature newCreature = Instantiate(creaturePrefab, homePos, Quaternion.identity);
             newCreature.transform.SetParent(creatureParent.transform);
+            newCreature.homePos = homePos;
             creatures.Add(newCreature);
         }
+    }
+
+    private Vector3 getHomePos(int index) {
+        float xPos;
+        float zPos;
+        float nPerSide = nCreatures/4;
+        float offset = nPerSide/(RADIUS * 2);
+
+        zPos = ((index % (nPerSide)) / nPerSide) * RADIUS * 2 - RADIUS + offset;
+        if (index < nPerSide) {
+            xPos = -RADIUS;
+            return new Vector3(xPos, HEIGHT, zPos);
+        }
+        if (index < 2 * nPerSide) {
+            xPos = RADIUS;
+            return new Vector3(xPos, HEIGHT, zPos);
+        }
+
+        xPos = ((index % (nPerSide)) / nPerSide) * RADIUS * 2 - RADIUS + offset;
+        if (index < 3 * nPerSide) {
+            zPos = -RADIUS;
+            return new Vector3(xPos, HEIGHT, zPos);
+        }
+        zPos = RADIUS;
+        return new Vector3(xPos, HEIGHT, zPos);
     }
 
     //Called each frame
@@ -50,19 +79,25 @@ public class MySceneDirector : Director
 
     IEnumerator MoveAndColor() {
         for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), 0.5f, Random.Range(-3f, 3f)), duration: 1f);
+            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 2f);
         }
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         
         for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), 0.5f, Random.Range(-3f, 3f)), duration: 1f);
+            creatures[i].WalkTo(creatures[i].homePos, duration: 2f);
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         
         for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), 0.5f, Random.Range(-3f, 3f)), duration: 1f);
+            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 2f);
+        }
+
+        yield return new WaitForSeconds(1f);
+        
+        for (int i = 0; i < creatures.Count; i++) {
+            creatures[i].WalkTo(creatures[i].homePos, duration: 2f);
         }
 
         yield return null;
@@ -86,8 +121,8 @@ public class MySceneDirector : Director
         Useful for simulations whose duration is not predetermined
         */
         new SceneBlock(0f, Appear);
-        new SceneBlock(3f, Zoom);
+        new SceneBlock(2f, Zoom);
         new SceneBlock(5f, MoveAndColor);
-        new SceneBlock(17f, Disappear);
+        // new SceneBlock(17f, Disappear);
     }
 }
