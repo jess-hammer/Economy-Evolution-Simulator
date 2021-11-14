@@ -55,7 +55,8 @@ public class ItemStash {
         new Item(ItemName.PEBBLE, 0, 0, 0, 0.1f, 2, 0),
         new Item(ItemName.TOOL, 0, 1, 0.1f, 10, 20, (int)Random.Range(5f, 10f)),
         new Item(ItemName.FURNITURE, 0.2f, 0.4f, 0.2f, 30, 100, (int)Random.Range(10f, 20f)),
-        new Item(ItemName.CLOTHING, 0.2f, 0.4f, 0.2f, 1, 50, (int)Random.Range(5f, 10f))
+        new Item(ItemName.CLOTHING, 0.2f, 0.4f, 0.2f, 1, 50, (int)Random.Range(5f, 10f)),
+        new Item(ItemName.TOILET_PAPER, 0.2f, 0.1f, 0f, 0.1f, 10, 6)
     };
 }
 

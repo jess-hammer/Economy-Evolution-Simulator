@@ -17,7 +17,6 @@ public class MyCreature : PrimerObject
         itemStash = new ItemStash();
         initialiseProductionRates();
         initialiseDaysSinceLastConsumed();
-        // SetIntrinsicScale(new Vector3(0.4f, 0.4f, 0.4f));
     }
 
     private void initialiseProductionRates() {

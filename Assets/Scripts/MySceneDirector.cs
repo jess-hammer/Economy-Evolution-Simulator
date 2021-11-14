@@ -15,6 +15,7 @@ public class MySceneDirector : Director
     private Graph graph;
     public Transform cameraTransform;
     public GameObject [] housePrefabs;
+    public GameObject [] itemModels; // index correspond to itemName enum number
 
     protected override void Awake() {
         base.Awake();
@@ -37,6 +38,7 @@ public class MySceneDirector : Director
             creatures.Add(newCreature);
         }
     }
+
     protected void spawnHouses() {
         for (int i = 0; i < nCreatures; i++) {
             Vector3 housePos = creatures[i].homePos + (Vector3.Normalize(creatures[i].homePos) * HOUSE_DIST);

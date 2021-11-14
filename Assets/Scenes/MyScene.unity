@@ -292,6 +292,21 @@ MonoBehaviour:
   nCreatures: 20
   creatureParent: {fileID: 538260871}
   cameraTransform: {fileID: 963194228}
+  housePrefabs:
+  - {fileID: 1051674328336762218, guid: e12ceb348e4c0ab43928ba10b328ad55, type: 3}
+  - {fileID: 814090948053284427, guid: 21042b06aea703a4783dba642ed9d05d, type: 3}
+  - {fileID: 6327417926706890678, guid: 472df95078c2d8b4984be405a7639f58, type: 3}
+  - {fileID: 4767004319805502468, guid: 186bd9e9bd6c17f4e9f85a6dc189255e, type: 3}
+  itemModels:
+  - {fileID: 379174351581137391, guid: d97364974f6ca4ba1a9433660254d03c, type: 3}
+  - {fileID: 6931192368351822721, guid: 8c249a589cd77487cb551954a79b044a, type: 3}
+  - {fileID: 3009537347229937603, guid: 99a07fd5978234e6d907caba47b31c1a, type: 3}
+  - {fileID: 5108758118407486283, guid: baeee93faaf4e448bb49acadcd142b7a, type: 3}
+  - {fileID: 3521679699633598410, guid: 678836a981dd34687b5ceda891a94240, type: 3}
+  - {fileID: 7871701755319966580, guid: 7ecdde6fee2904651981a95f58ad7d03, type: 3}
+  - {fileID: 8838345117828292072, guid: c42554d3d30e24a89876ffdfd72ceb52, type: 3}
+  - {fileID: 8862601122977135559, guid: 712a795cf5984433eb00c202c1d2907a, type: 3}
+  - {fileID: 4308464658345067182, guid: d61dc7a7c72d94d768eac0b8f587bbbf, type: 3}
 --- !u!4 &739953484
 Transform:
   m_ObjectHideFlags: 0
