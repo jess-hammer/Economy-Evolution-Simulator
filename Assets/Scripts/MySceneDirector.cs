@@ -12,10 +12,12 @@ public class MySceneDirector : Director
     private float HEIGHT = 0.3f;
     private float HOUSE_HEIGHT = 0f;
     private float HOUSE_DIST = 1f;
+    private int N_DAYS = 10; // number of days in the simulation
     private Graph graph;
     public Transform cameraTransform;
     public GameObject [] housePrefabs;
     public GameObject [] itemModels; // index correspond to itemName enum number
+    public int dayNumber = 0;
 
     protected override void Awake() {
         base.Awake();
@@ -94,23 +96,11 @@ public class MySceneDirector : Director
         yield return new WaitForSeconds(4);
     }
 
-    IEnumerator MoveAndColor() {
+    IEnumerator MoveAround() {
         for (int i = 0; i < creatures.Count; i++) {
             creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 1f);
         }
         
-        yield return new WaitForSeconds(1f);
-        
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(creatures[i].homePos, duration: 1f);
-        }
-
-        yield return new WaitForSeconds(1f);
-        
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 1f);
-        }
-
         yield return new WaitForSeconds(1f);
         
         for (int i = 0; i < creatures.Count; i++) {
@@ -118,6 +108,25 @@ public class MySceneDirector : Director
         }
 
         yield return null;
+    }
+
+    IEnumerator RunTimestep() {
+        for (int i = 0; i < creatures.Count; i++) {
+            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: Random.Range(0f, 3f));
+        }
+        
+        yield return new WaitForSeconds(1f);
+        
+        for (int i = 0; i < creatures.Count; i++) {
+            creatures[i].WalkTo(creatures[i].homePos, duration: 1f);
+        }
+
+        yield return new WaitForSeconds(1f);
+        
+        if (dayNumber < N_DAYS) {
+            dayNumber++;
+            StartCoroutine("RunTimestep");
+        }
     }
 
     //Define event actions
@@ -168,9 +177,11 @@ public class MySceneDirector : Director
         Useful for simulations whose duration is not predetermined
         */
         new SceneBlock(0f, Appear);
-        // new SceneBlock(2f, Zoom);
         new SceneBlock(1f, GraphAppear);
-        new SceneBlock(5f, MoveAndColor);
+        // for (int i = 0; i < N_DAYS; i++) {
+            new SceneBlock(5f, RunTimestep);
+        // }
+        
         // new SceneBlock(17f, Disappear);
     }
 }

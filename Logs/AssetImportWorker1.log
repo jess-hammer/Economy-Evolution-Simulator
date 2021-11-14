@@ -233,3 +233,625 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003020 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.915 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 255.9 MB.
+System memory in use after: 256.0 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2032.
+Total: 1.213709 ms (FindLiveObjects: 0.101625 ms CreateObjectMapping: 0.029292 ms MarkObjects: 1.068375 ms  DeleteObjects: 0.013542 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002890 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.851 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 256.2 MB.
+System memory in use after: 256.3 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2035.
+Total: 1.330750 ms (FindLiveObjects: 0.119292 ms CreateObjectMapping: 0.032584 ms MarkObjects: 1.163500 ms  DeleteObjects: 0.014584 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002274 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.933 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 256.6 MB.
+System memory in use after: 256.7 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2038.
+Total: 1.274000 ms (FindLiveObjects: 0.101042 ms CreateObjectMapping: 0.029833 ms MarkObjects: 1.126500 ms  DeleteObjects: 0.015750 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001297 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.872 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 256.9 MB.
+System memory in use after: 257.0 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2041.
+Total: 1.206792 ms (FindLiveObjects: 0.099584 ms CreateObjectMapping: 0.030583 ms MarkObjects: 1.061125 ms  DeleteObjects: 0.014750 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1195.765925 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Props
+  artifactKey: Guid(a83bb5d9346617246989deb637a194d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Props using Guid(a83bb5d9346617246989deb637a194d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a82b2cc6711e1aaba402721dcd80da26') in 0.005006 seconds 
+  Import took 0.006958 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.045739 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Props
+  artifactKey: Guid(a83bb5d9346617246989deb637a194d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Props using Guid(a83bb5d9346617246989deb637a194d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a82b2cc6711e1aaba402721dcd80da26') in 0.000666 seconds 
+  Import took 0.002428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.428327 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Props/Prefabs
+  artifactKey: Guid(0e0309a79bd686f4b94882364bc320c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Props/Prefabs using Guid(0e0309a79bd686f4b94882364bc320c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd7a8b9352e2fa32766ba4a9c36453a9') in 0.001204 seconds 
+  Import took 0.004518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.048492 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Props/Prefabs/PT_Medieval_Chest_01.prefab
+  artifactKey: Guid(6f7106b036a211b4fb776e275a03e56f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Props/Prefabs/PT_Medieval_Chest_01.prefab using Guid(6f7106b036a211b4fb776e275a03e56f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a29cbbc4c7c017c40ebec59e428af399') in 0.140867 seconds 
+  Import took 0.143036 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.691892 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs
+  artifactKey: Guid(e28a2cd9344d55840a82ef81c55d396f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs using Guid(e28a2cd9344d55840a82ef81c55d396f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd973abce5a55b7ee1eb1968e7e9ed30d') in 0.001248 seconds 
+  Import took 0.004696 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.060067 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Arrow_03_a.prefab
+  artifactKey: Guid(e3787be58bd99af49b6d984cca640c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Arrow_03_a.prefab using Guid(e3787be58bd99af49b6d984cca640c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1304f30069205af921d8f59fede3f01') in 0.531114 seconds 
+  Import took 0.533263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_ShortWaraxe_01_a.prefab
+  artifactKey: Guid(adae6be6654e723469fedd60d61b200c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_ShortWaraxe_01_a.prefab using Guid(adae6be6654e723469fedd60d61b200c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1746920d9ce9928682e1f20589720d9') in 0.007684 seconds 
+  Import took 0.009874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Longsword_01_a.prefab
+  artifactKey: Guid(e18213b527e9be54d9513ce2dd5f3b67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Longsword_01_a.prefab using Guid(e18213b527e9be54d9513ce2dd5f3b67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cf467034fd97d54ea0dd75c64297f82') in 0.008264 seconds 
+  Import took 0.010381 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Pike_01_a.prefab
+  artifactKey: Guid(72fc84d4624f140498736783e8007a55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Pike_01_a.prefab using Guid(72fc84d4624f140498736783e8007a55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bafba25988798ae2eb1956b18f39f659') in 0.007337 seconds 
+  Import took 0.009225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Shield_01_a.prefab
+  artifactKey: Guid(3f1bf1eb280a42941acb0134eccf563b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Shield_01_a.prefab using Guid(3f1bf1eb280a42941acb0134eccf563b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1517f9e2d4d38384cb8298b2f0610997') in 0.023564 seconds 
+  Import took 0.025527 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Shield_19_a.prefab
+  artifactKey: Guid(b7f0edf49b0582c428fe30ccbd831a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Shield_19_a.prefab using Guid(b7f0edf49b0582c428fe30ccbd831a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '374d8ddb89cf4857ce9b8d8459f71a00') in 0.011409 seconds 
+  Import took 0.013294 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Shield_06_a.prefab
+  artifactKey: Guid(4dc2733e14696c1498ae2db0dc98018c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Shield_06_a.prefab using Guid(4dc2733e14696c1498ae2db0dc98018c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45f1607fbbd72cd03e57d154e2980675') in 0.007616 seconds 
+  Import took 0.009636 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Quiver_01_a.prefab
+  artifactKey: Guid(5a8e3e860375280488cd399e2e732054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Quiver_01_a.prefab using Guid(5a8e3e860375280488cd399e2e732054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fc5fd86a4b8e3706a02307074e30e31') in 0.007004 seconds 
+  Import took 0.008843 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Bow_01_a.prefab
+  artifactKey: Guid(7076aac120d89da4996ba4b35f82f8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Bow_01_a.prefab using Guid(7076aac120d89da4996ba4b35f82f8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2b52e8240d703269b32a7fac01f9c06') in 0.026361 seconds 
+  Import took 0.028221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000332 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Sword_01_a.prefab
+  artifactKey: Guid(39ec6af3eb8c70848b3da75dbf39628f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Sword_01_a.prefab using Guid(39ec6af3eb8c70848b3da75dbf39628f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bc3c6d6b5fb6c1d35cad1d8ecc87246') in 0.007797 seconds 
+  Import took 0.009658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Mace_01_a.prefab
+  artifactKey: Guid(38b246b515ecfc1489b2a72b8567bfd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Weapons/Prefabs/PT_Medieval_Mace_01_a.prefab using Guid(38b246b515ecfc1489b2a72b8567bfd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f4676a5d20e9e9c5fb59832403d9f3e') in 0.007656 seconds 
+  Import took 0.009604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.604689 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack
+  artifactKey: Guid(b4567b831d0fdb746972ec6c0e6b563c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack using Guid(b4567b831d0fdb746972ec6c0e6b563c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3188eff8a716af90f55b280e389aae90') in 0.002115 seconds 
+  Import took 0.004453 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.056578 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/Grass_Layer.terrainlayer
+  artifactKey: Guid(4cd84bec0dcd70749b7a9ba74f786a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/Grass_Layer.terrainlayer using Guid(4cd84bec0dcd70749b7a9ba74f786a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15152128e1cc379d0bcc20875cefee20') in 0.183624 seconds 
+  Import took 0.185688 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/Ground_Layer.terrainlayer
+  artifactKey: Guid(75c4c18b5ee1292498ee87757b7c1799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/Ground_Layer.terrainlayer using Guid(75c4c18b5ee1292498ee87757b7c1799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6efe960d4cc2485064ca0918f2d6106') in 0.003510 seconds 
+  Import took 0.005242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/PostProcessing.asset
+  artifactKey: Guid(35d50085142b3184eabd1d3f496c4dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/PostProcessing.asset using Guid(35d50085142b3184eabd1d3f496c4dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a9aa48972eb9252fd593695d39022b2') in 0.077138 seconds 
+  Import took 0.078893 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/New Terrain.asset
+  artifactKey: Guid(00fbea2f54cec4b49beed28c2759f820) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/New Terrain.asset using Guid(00fbea2f54cec4b49beed28c2759f820) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tree prefab at index 0 is missing.
+
+Tree prefab at index 1 is missing.
+
+Tree prefab at index 2 is missing.
+
+ -> (artifact id: 'b4135d125a14334bb127e67253c1f5d1') in 0.042810 seconds 
+  Import took 0.044596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/New Material.mat
+  artifactKey: Guid(c2022aac65d3a504e98b8dd7fb67652b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/New Material.mat using Guid(c2022aac65d3a504e98b8dd7fb67652b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9e0e4438723daed5dce7b1a16b33dbc') in 0.122913 seconds 
+  Import took 0.124732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/New Post-processing Profile.asset
+  artifactKey: Guid(ad28f8094a0fceb46b18fd6896d9b674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Demos/Armors_Free_Pack/New Post-processing Profile.asset using Guid(ad28f8094a0fceb46b18fd6896d9b674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59cfd4d5e716d00068ea22c97b8ab548') in 0.001585 seconds 
+  Import took 0.003245 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.662485 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Props/Sources
+  artifactKey: Guid(4e62a6b3d2f0ff84b87b01a4593e9a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Props/Sources using Guid(4e62a6b3d2f0ff84b87b01a4593e9a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcf8e9f144e029bd6b00d2a8cef94832') in 0.001133 seconds 
+  Import took 0.004066 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.916981 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Props/Sources/Materials
+  artifactKey: Guid(e6829d973e498ee46ae8a5ec66d16a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Props/Sources/Materials using Guid(e6829d973e498ee46ae8a5ec66d16a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb74d6ca9734db63cf648017de2dccee') in 0.002086 seconds 
+  Import took 0.005608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.044236 seconds.
+  path: Assets/Polytope Studio/Lowpoly Medieval Props/Sources/Materials/PT_Medieval_mat.mat
+  artifactKey: Guid(aac76b3107c61b14e95aa9244475a739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polytope Studio/Lowpoly Medieval Props/Sources/Materials/PT_Medieval_mat.mat using Guid(aac76b3107c61b14e95aa9244475a739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45511aa4a695879608be85f9edf65814') in 0.009588 seconds 
+  Import took 0.011797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.264347 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models
+  artifactKey: Guid(0c13319aebefb894680a11a48021b15d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models using Guid(0c13319aebefb894680a11a48021b15d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '341236f6cd91f29b25fd0a366a19e479') in 0.001407 seconds 
+  Import took 0.005061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.053725 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Stones_and_buried_treasure.FBX
+  artifactKey: Guid(5f3a7deba91ee3341b2266db1be8c0a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Stones_and_buried_treasure.FBX using Guid(5f3a7deba91ee3341b2266db1be8c0a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fa3f147c87a73da1fa3a0e4c1c5c398') in 0.441272 seconds 
+  Import took 0.443938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.091168 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials
+  artifactKey: Guid(8b89b0ab4ccd847a1a55daa06f87c6f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials using Guid(8b89b0ab4ccd847a1a55daa06f87c6f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cdc1a2d7adc8a9522a47628f03d6a6f') in 0.001185 seconds 
+  Import took 0.004107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials
+  artifactKey: Guid(8b89b0ab4ccd847a1a55daa06f87c6f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials using Guid(8b89b0ab4ccd847a1a55daa06f87c6f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cdc1a2d7adc8a9522a47628f03d6a6f') in 0.000854 seconds 
+  Import took 0.003205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.043277 seconds.
+  path: Assets/ImportedModels/Stones_and_buried_treasure/Prefabs
+  artifactKey: Guid(db722b1ea2bfc084ea2c7a634b131557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ImportedModels/Stones_and_buried_treasure/Prefabs using Guid(db722b1ea2bfc084ea2c7a634b131557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b886642eeece4e90863f5cc281625ac') in 0.001254 seconds 
+  Import took 0.004670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.445236 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Bone.mat
+  artifactKey: Guid(a2e680fef0d564f4b8469ec8d9612f76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Bone.mat using Guid(a2e680fef0d564f4b8469ec8d9612f76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66d3525a7b4d86220f1b5b1bf2bceee1') in 0.009887 seconds 
+  Import took 0.012575 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Gold.mat
+  artifactKey: Guid(6315c587c53244fd6956c5d63f382f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Gold.mat using Guid(6315c587c53244fd6956c5d63f382f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbe84074ce29396fa4fcfd4dfaf964a9') in 0.008566 seconds 
+  Import took 0.010683 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Wood_2.mat
+  artifactKey: Guid(e5632f64054d0495aa14c80e51de0a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Wood_2.mat using Guid(e5632f64054d0495aa14c80e51de0a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd21da4ec6d887dee42a9b1f60a936a3e') in 0.007414 seconds 
+  Import took 0.009400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Stell.mat
+  artifactKey: Guid(237155a0d142a4fcf85a2908eeb8f330) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Stell.mat using Guid(237155a0d142a4fcf85a2908eeb8f330) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '942df0101c524e5b47b4a397aced600b') in 0.006855 seconds 
+  Import took 0.008740 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Tree_Fir_Foliage.mat
+  artifactKey: Guid(25ee8384740c343c8a4f56994be69768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Tree_Fir_Foliage.mat using Guid(25ee8384740c343c8a4f56994be69768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbb2bdbd47ce3de0d50f0e6e1f0fa9a0') in 0.007182 seconds 
+  Import took 0.008894 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Foliage.mat
+  artifactKey: Guid(7aaa7aa4ade9a434c9cb0bd49f8f6a74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Foliage.mat using Guid(7aaa7aa4ade9a434c9cb0bd49f8f6a74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f75ff696861d2ecccfd540670c4061bd') in 0.006519 seconds 
+  Import took 0.008208 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Tree_Fir_Wood.mat
+  artifactKey: Guid(28f84244961894ef4b36b9a5fea40ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Tree_Fir_Wood.mat using Guid(28f84244961894ef4b36b9a5fea40ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31472fbd495253a77552585a0fab85f2') in 0.007129 seconds 
+  Import took 0.008966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Ground.mat
+  artifactKey: Guid(c2b561e6991044561a1c495727bb11cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Ground.mat using Guid(c2b561e6991044561a1c495727bb11cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '251a16334a96e88b2c34ad9b40e379e8') in 0.007065 seconds 
+  Import took 0.009035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Ruby.mat
+  artifactKey: Guid(30bea599218a4408996cf5c077d0082e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Ruby.mat using Guid(30bea599218a4408996cf5c077d0082e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eaca2c60f9874049d34ffbbeb492966') in 0.006803 seconds 
+  Import took 0.008765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Wood_3.mat
+  artifactKey: Guid(10684c9ee7ead4121b0a4c1dd76176a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Wood_3.mat using Guid(10684c9ee7ead4121b0a4c1dd76176a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3ac5f8a8bb6da5eae931fe722b8fb39') in 0.007161 seconds 
+  Import took 0.008903 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Wood_1.mat
+  artifactKey: Guid(0e109669522d94fd8bcca8509a75628b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Wood_1.mat using Guid(0e109669522d94fd8bcca8509a75628b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ade0a246e1d2f67386b06df28661597') in 0.006660 seconds 
+  Import took 0.008369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Flask_Mana.mat
+  artifactKey: Guid(d98a1018ebfb64a52b4ebd3126099b46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Flask_Mana.mat using Guid(d98a1018ebfb64a52b4ebd3126099b46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e0e918668bb7df18e6a0a33b9ec6433') in 0.006937 seconds 
+  Import took 0.008669 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Flask_Health.mat
+  artifactKey: Guid(e01c77d3c664942aba7b42aa5c7c43ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Flask_Health.mat using Guid(e01c77d3c664942aba7b42aa5c7c43ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f40465a7d5509052e48ba2c2fe116c0') in 0.006876 seconds 
+  Import took 0.008568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Emerald.mat
+  artifactKey: Guid(69eefe7fe6e424d86bd541633a0c2fc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Emerald.mat using Guid(69eefe7fe6e424d86bd541633a0c2fc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb6991876df71e782b86030ca452f83f') in 0.006741 seconds 
+  Import took 0.008540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Stone.mat
+  artifactKey: Guid(1c0db07a074b949feb3137c74854fa86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Stone.mat using Guid(1c0db07a074b949feb3137c74854fa86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da5c7804f8797543b8668f776386b506') in 0.006595 seconds 
+  Import took 0.008338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.029103 seconds.
+  path: Assets/Stones_and_buried_treasure/3d_Models/Materials/Flask_Health.mat
+  artifactKey: Guid(e01c77d3c664942aba7b42aa5c7c43ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stones_and_buried_treasure/3d_Models/Materials/Flask_Health.mat using Guid(e01c77d3c664942aba7b42aa5c7c43ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f40465a7d5509052e48ba2c2fe116c0') in 0.007025 seconds 
+  Import took 0.009213 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002808 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.893 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 276.8 MB.
+System memory in use after: 276.4 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 2086.
+Total: 1.595958 ms (FindLiveObjects: 0.123375 ms CreateObjectMapping: 0.030584 ms MarkObjects: 1.084959 ms  DeleteObjects: 0.356333 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002059 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.933 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 276.6 MB.
+System memory in use after: 276.7 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2089.
+Total: 1.253125 ms (FindLiveObjects: 0.095833 ms CreateObjectMapping: 0.029917 ms MarkObjects: 1.107166 ms  DeleteObjects: 0.019542 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002026 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.906 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 276.8 MB.
+System memory in use after: 276.9 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2092.
+Total: 1.292833 ms (FindLiveObjects: 0.099375 ms CreateObjectMapping: 0.032042 ms MarkObjects: 1.139875 ms  DeleteObjects: 0.020584 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001446 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.842 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 277.1 MB.
+System memory in use after: 277.3 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2095.
+Total: 1.297292 ms (FindLiveObjects: 0.104833 ms CreateObjectMapping: 0.033333 ms MarkObjects: 1.142167 ms  DeleteObjects: 0.016083 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
