@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class MySceneDirector : Director
 {
-    [SerializeField] List<MyCreature> creatures = null;
-    public MyCreature creaturePrefab;
+    [Space]
+    public int dayNumber = 0;
     public int nCreatures;
+    
+    [Space]
+    public MyCreature creaturePrefab;
     public GameObject creatureParent;
+    public Transform cameraTransform;
+    public GameObject [] housePrefabs;
+    public GameObject [] itemModels; // index correspond to itemName enum number
+    public Color highReputationColor;
+    public Color lowReputationColor;
+
+    List<MyCreature> creatures = null;
     private float RADIUS = 4f;
     private float HEIGHT = 0.3f;
     private float HOUSE_HEIGHT = 0f;
     private float HOUSE_DIST = 1f;
     private int N_DAYS = 10; // number of days in the simulation
     private Graph graph;
-    public Transform cameraTransform;
-    public GameObject [] housePrefabs;
-    public GameObject [] itemModels; // index correspond to itemName enum number
-    public int dayNumber = 0;
-
+    
     protected override void Awake() {
         base.Awake();
         spawnBlobs(nCreatures);
@@ -32,6 +38,7 @@ public class MySceneDirector : Director
     }
 
     protected void spawnBlobs(int n) {
+        creatures = new List<MyCreature>();
         for (int i = 0; i < n; i++) {
             Vector3 homePos = getHomePos(i);
             MyCreature newCreature = Instantiate(creaturePrefab, homePos, Quaternion.identity);
@@ -111,8 +118,13 @@ public class MySceneDirector : Director
     }
 
     IEnumerator RunTimestep() {
+        // refresh the reputation colours
         for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: Random.Range(0f, 3f));
+            creatures[i].RefreshColor(lowReputationColor, highReputationColor);
+        }
+
+        for (int i = 0; i < creatures.Count; i++) {
+            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 1f);
         }
         
         yield return new WaitForSeconds(1f);

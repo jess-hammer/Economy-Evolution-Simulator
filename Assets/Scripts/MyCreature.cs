@@ -9,7 +9,12 @@ public class MyCreature : PrimerObject
     public int [] daysSinceLastConsumed;
     public ItemName currentlySeeking;
     public Vector3 homePos;
-    public float averageReputation;
+    public float reputation;
+
+    private static float maxReputation = 5;
+    private static float minReputation = 0;
+
+    private Material material;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +22,16 @@ public class MyCreature : PrimerObject
         itemStash = new ItemStash();
         initialiseProductionRates();
         initialiseDaysSinceLastConsumed();
+        reputation = Random.Range(0, 5);
+        
+        // set material
+        material = this.gameObject.GetComponentInChildren<MeshRenderer>().materials[0];
+    }
+
+    public void RefreshColor(Color col1, Color col2) {
+        float amount = Mathf.InverseLerp(minReputation, maxReputation, reputation);
+        Color newColor = Color.Lerp(col1, col2, amount);
+        material.SetColor("_EmissionColor", newColor);
     }
 
     private void initialiseProductionRates() {
