@@ -9,6 +9,7 @@ public class MyCreature : PrimerObject
     public int [] daysSinceLastConsumed;
     public ItemName currentlySeeking;
     public Vector3 homePos;
+    public float averageReputation;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,7 @@ public class MyCreature : PrimerObject
         }
     }
 
-    public void consumeItems() {
+    public void ConsumeItems() {
         for (int i = 0; i < itemStash.items.Length; i++) {
             if (daysSinceLastConsumed[i] >= itemStash.items[i].consumeRate) {
                 if (itemStash.items[i].quantity >= 1) {

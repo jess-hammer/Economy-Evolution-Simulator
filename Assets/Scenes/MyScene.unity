@@ -284,12 +284,14 @@ MonoBehaviour:
   primerArrowPrefab: {fileID: 0}
   primerBracketPrefab: {fileID: 0}
   textPrefab: {fileID: 0}
-  graphPrefab: {fileID: 0}
+  graphPrefab: {fileID: 2914546190922299361, guid: 446a214e1103ca140833d940101d0488,
+    type: 3}
   creatures: []
   creaturePrefab: {fileID: 4763173241241534246, guid: f7f21ccbfa91b401bb44b8b1de2a86fc,
     type: 3}
   nCreatures: 20
   creatureParent: {fileID: 538260871}
+  cameraTransform: {fileID: 963194228}
 --- !u!4 &739953484
 Transform:
   m_ObjectHideFlags: 0
