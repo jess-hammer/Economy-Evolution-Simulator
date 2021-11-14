@@ -4409,3 +4409,541 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006057 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.861 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 271.1 MB.
+System memory in use after: 271.2 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2374.
+Total: 1.372459 ms (FindLiveObjects: 0.177583 ms CreateObjectMapping: 0.032541 ms MarkObjects: 1.146209 ms  DeleteObjects: 0.015042 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 3219.472494 seconds.
+  path: Assets/Low Poly Houses Pack/Models
+  artifactKey: Guid(6660b8ddd8a32d64fb8c61112aa81998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Models using Guid(6660b8ddd8a32d64fb8c61112aa81998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '933f4da75a5a3e34acfe7fb1ab44d109') in 0.004131 seconds 
+  Import took 0.006133 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.025662 seconds.
+  path: Assets/Low Poly Houses Pack/Models
+  artifactKey: Guid(6660b8ddd8a32d64fb8c61112aa81998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Models using Guid(6660b8ddd8a32d64fb8c61112aa81998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '933f4da75a5a3e34acfe7fb1ab44d109') in 0.000661 seconds 
+  Import took 0.002369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027452 seconds.
+  path: Assets/Low Poly Houses Pack/Models/Houses.obj
+  artifactKey: Guid(c37b1b0f369baf7428f9af4957577a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Models/Houses.obj using Guid(c37b1b0f369baf7428f9af4957577a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63acdf9f18d0b296897f7105a4bbcbd8') in 1.914464 seconds 
+  Import took 1.917164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002380 seconds.
+  path: Assets/Low Poly Houses Pack/Models/Houses.obj
+  artifactKey: Guid(c37b1b0f369baf7428f9af4957577a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Models/Houses.obj using Guid(c37b1b0f369baf7428f9af4957577a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63acdf9f18d0b296897f7105a4bbcbd8') in 0.236818 seconds 
+  Import took 0.239075 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.562293 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs
+  artifactKey: Guid(30054577c5b925e48875d7ffbbddf8fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs using Guid(30054577c5b925e48875d7ffbbddf8fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dc64887dba8f0e916f0fa55f9715a10') in 0.001011 seconds 
+  Import took 0.003535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016173 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_01.prefab
+  artifactKey: Guid(2e5cdd519d444444f8a7dd0e14ca9a62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_01.prefab using Guid(2e5cdd519d444444f8a7dd0e14ca9a62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ea58aad1db4003e681fa42b049cb2a0') in 0.009996 seconds 
+  Import took 0.012345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_16.prefab
+  artifactKey: Guid(4107aaa5c66163747918d43d0f28666f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_16.prefab using Guid(4107aaa5c66163747918d43d0f28666f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afd677a8dd5650091d55f843d522791c') in 0.009545 seconds 
+  Import took 0.011497 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_06.prefab
+  artifactKey: Guid(e12ceb348e4c0ab43928ba10b328ad55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_06.prefab using Guid(e12ceb348e4c0ab43928ba10b328ad55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d658e48058a0f5d20135e07c1819487') in 0.005971 seconds 
+  Import took 0.008136 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_10.prefab
+  artifactKey: Guid(b5b124b3bda4fd34eaf05d4635bee6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_10.prefab using Guid(b5b124b3bda4fd34eaf05d4635bee6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd4527e5d519077947a9d6665d6d768') in 0.006501 seconds 
+  Import took 0.008509 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_13.prefab
+  artifactKey: Guid(472df95078c2d8b4984be405a7639f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_13.prefab using Guid(472df95078c2d8b4984be405a7639f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d898728d6df30304ca402f3fe2849f2') in 0.011782 seconds 
+  Import took 0.013625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_02.prefab
+  artifactKey: Guid(5a6a1737c26f48b408b468797024d450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_02.prefab using Guid(5a6a1737c26f48b408b468797024d450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a27efd4753ed9ac856fc44a30282531') in 0.006053 seconds 
+  Import took 0.007965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_03.prefab
+  artifactKey: Guid(026082b4246d07c41b8fface34a8a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_03.prefab using Guid(026082b4246d07c41b8fface34a8a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c62f9cf17638a2c6617da1c891e9720') in 0.006245 seconds 
+  Import took 0.008141 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_08.prefab
+  artifactKey: Guid(eab4a5aa203d7f7459837ec0b6bb6b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_08.prefab using Guid(eab4a5aa203d7f7459837ec0b6bb6b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '277382f63e275941b5dde229386114a3') in 0.006116 seconds 
+  Import took 0.007872 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_05.prefab
+  artifactKey: Guid(186bd9e9bd6c17f4e9f85a6dc189255e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_05.prefab using Guid(186bd9e9bd6c17f4e9f85a6dc189255e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2042ef96574b42022264e3627a63ee3a') in 0.006136 seconds 
+  Import took 0.007866 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_07.prefab
+  artifactKey: Guid(ed03d319e8ef85941a270a9308c5360c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_07.prefab using Guid(ed03d319e8ef85941a270a9308c5360c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b5deb0e380f80d666093e57e5111d7f') in 0.005970 seconds 
+  Import took 0.007764 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_04.prefab
+  artifactKey: Guid(16129a5679a46c942929e3af4274aa0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_04.prefab using Guid(16129a5679a46c942929e3af4274aa0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9266c7bb256775a6d614d7b22d5ce077') in 0.006477 seconds 
+  Import took 0.008402 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_19.prefab
+  artifactKey: Guid(f32cf54380b4f784c98ab204592f27a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_19.prefab using Guid(f32cf54380b4f784c98ab204592f27a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a9617276a4f4cadbfe654de70ee53b7') in 0.005885 seconds 
+  Import took 0.007839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_11.prefab
+  artifactKey: Guid(c38443d59fbc57e48965abeefa6d3f24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_11.prefab using Guid(c38443d59fbc57e48965abeefa6d3f24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd53e75d7bc60db2fe9da53f02a390b0') in 0.006044 seconds 
+  Import took 0.007918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_15.prefab
+  artifactKey: Guid(21042b06aea703a4783dba642ed9d05d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_15.prefab using Guid(21042b06aea703a4783dba642ed9d05d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62699b016e7ba10e43b4af0ceea74f89') in 0.005548 seconds 
+  Import took 0.007304 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_20.prefab
+  artifactKey: Guid(913873415b0148e4d9ffc8ffc56097d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_20.prefab using Guid(913873415b0148e4d9ffc8ffc56097d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd85cdd5702ecd59ebd000b5ed01e08d0') in 0.005850 seconds 
+  Import took 0.007812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_09.prefab
+  artifactKey: Guid(2c9ae2575dfd604458c84b4b38973788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_09.prefab using Guid(2c9ae2575dfd604458c84b4b38973788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a06eee8d997be94365f97a7afa4ab9c') in 0.005809 seconds 
+  Import took 0.007687 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_17.prefab
+  artifactKey: Guid(6da60cb2f269f1148b020c61062a0234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_17.prefab using Guid(6da60cb2f269f1148b020c61062a0234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8153615f67cb57e2e7b1942b7d442832') in 0.006050 seconds 
+  Import took 0.008053 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_18.prefab
+  artifactKey: Guid(362a19fae37098a49a2c19358d4a788a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_18.prefab using Guid(362a19fae37098a49a2c19358d4a788a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '133891b61accbd585d6db711ba656a77') in 0.011832 seconds 
+  Import took 0.013729 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_21.prefab
+  artifactKey: Guid(3a88d036933752e4d89a1a36fc3ebbeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_21.prefab using Guid(3a88d036933752e4d89a1a36fc3ebbeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46992acc32bc32ef2c6e14198ac12957') in 0.005720 seconds 
+  Import took 0.007513 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_14.prefab
+  artifactKey: Guid(49de95b0bb3d4b74f95756c69498b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_14.prefab using Guid(49de95b0bb3d4b74f95756c69498b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '214ec402977b5e487d43679bba44d9b8') in 0.005580 seconds 
+  Import took 0.007301 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Low Poly Houses Pack/Prefabs/House_12.prefab
+  artifactKey: Guid(4ec48f7f8b2297543b8d598b9b35ad79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Houses Pack/Prefabs/House_12.prefab using Guid(4ec48f7f8b2297543b8d598b9b35ad79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4c5b0cf0be3cea6e95b76b3d9b58418') in 0.006106 seconds 
+  Import took 0.007840 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003158 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.860 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 277.1 MB.
+System memory in use after: 277.2 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2378.
+Total: 1.320417 ms (FindLiveObjects: 0.132750 ms CreateObjectMapping: 0.033208 ms MarkObjects: 1.137583 ms  DeleteObjects: 0.016167 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001339 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.950 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 277.3 MB.
+System memory in use after: 277.4 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2381.
+Total: 1.317500 ms (FindLiveObjects: 0.127500 ms CreateObjectMapping: 0.032584 ms MarkObjects: 1.143208 ms  DeleteObjects: 0.013625 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001326 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.825 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 277.5 MB.
+System memory in use after: 277.6 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2384.
+Total: 1.351375 ms (FindLiveObjects: 0.138542 ms CreateObjectMapping: 0.033000 ms MarkObjects: 1.164834 ms  DeleteObjects: 0.014250 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002948 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.921 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 277.7 MB.
+System memory in use after: 277.8 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2387.
+Total: 1.398125 ms (FindLiveObjects: 0.132375 ms CreateObjectMapping: 0.032834 ms MarkObjects: 1.216791 ms  DeleteObjects: 0.015500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002372 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.942 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 277.9 MB.
+System memory in use after: 278.1 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2390.
+Total: 1.350083 ms (FindLiveObjects: 0.130333 ms CreateObjectMapping: 0.034083 ms MarkObjects: 1.167583 ms  DeleteObjects: 0.017208 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002011 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.927 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 278.2 MB.
+System memory in use after: 278.3 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2393.
+Total: 1.438125 ms (FindLiveObjects: 0.160875 ms CreateObjectMapping: 0.035000 ms MarkObjects: 1.224958 ms  DeleteObjects: 0.016458 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002008 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.949 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 278.4 MB.
+System memory in use after: 278.5 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2396.
+Total: 1.425375 ms (FindLiveObjects: 0.146792 ms CreateObjectMapping: 0.034416 ms MarkObjects: 1.225250 ms  DeleteObjects: 0.018083 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001285 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.936 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 278.6 MB.
+System memory in use after: 278.7 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2399.
+Total: 1.434750 ms (FindLiveObjects: 0.157625 ms CreateObjectMapping: 0.035542 ms MarkObjects: 1.222708 ms  DeleteObjects: 0.017958 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001186 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.921 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 278.9 MB.
+System memory in use after: 279.0 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2402.
+Total: 1.336708 ms (FindLiveObjects: 0.124083 ms CreateObjectMapping: 0.033542 ms MarkObjects: 1.163167 ms  DeleteObjects: 0.014958 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001464 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.879 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1541 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 279.1 MB.
+System memory in use after: 279.2 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2405.
+Total: 1.426500 ms (FindLiveObjects: 0.155334 ms CreateObjectMapping: 0.034500 ms MarkObjects: 1.217459 ms  DeleteObjects: 0.018542 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

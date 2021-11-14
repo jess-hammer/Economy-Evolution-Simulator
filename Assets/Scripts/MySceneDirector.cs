@@ -10,12 +10,16 @@ public class MySceneDirector : Director
     public GameObject creatureParent;
     private float RADIUS = 4f;
     private float HEIGHT = 0.3f;
+    private float HOUSE_HEIGHT = 0f;
+    private float HOUSE_DIST = 1f;
     private Graph graph;
     public Transform cameraTransform;
+    public GameObject [] housePrefabs;
 
     protected override void Awake() {
         base.Awake();
         spawnBlobs(nCreatures);
+        spawnHouses();
         camRig.GoToStandardPositions();
 
         // set object scale to zero if they're going to scale in
@@ -31,6 +35,15 @@ public class MySceneDirector : Director
             newCreature.transform.SetParent(creatureParent.transform);
             newCreature.homePos = homePos;
             creatures.Add(newCreature);
+        }
+    }
+    protected void spawnHouses() {
+        for (int i = 0; i < nCreatures; i++) {
+            Vector3 housePos = creatures[i].homePos + (Vector3.Normalize(creatures[i].homePos) * HOUSE_DIST);
+            housePos = new Vector3(housePos.x, HOUSE_HEIGHT, housePos.z);
+            GameObject house = Instantiate(housePrefabs[(int)Random.Range(0, housePrefabs.Length - 1)], housePos, Quaternion.identity);
+            house.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
+            house.transform.LookAt(new Vector3(0, HOUSE_HEIGHT, 0));
         }
     }
 
