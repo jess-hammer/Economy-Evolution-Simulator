@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ChartUtil;
 
 public class MySceneDirector : Director
 {
@@ -16,6 +17,7 @@ public class MySceneDirector : Director
     public GameObject [] itemModels; // index correspond to itemName enum number
     public Color highReputationColor;
     public Color lowReputationColor;
+    public ChartData chartData;
 
     List<MyCreature> creatures = null;
     private float RADIUS = 4f;
@@ -23,8 +25,7 @@ public class MySceneDirector : Director
     private float HOUSE_HEIGHT = 0f;
     private float HOUSE_DIST = 1f;
     private int N_DAYS = 10; // number of days in the simulation
-    private Graph graph;
-    
+
     protected override void Awake() {
         base.Awake();
         spawnBlobs(nCreatures);
@@ -55,6 +56,36 @@ public class MySceneDirector : Director
             GameObject house = Instantiate(housePrefabs[(int)Random.Range(0, housePrefabs.Length - 1)], housePos, Quaternion.identity);
             house.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
             house.transform.LookAt(new Vector3(0, HOUSE_HEIGHT, 0));
+        }
+    }
+
+    private void updateGraph() {
+        Debug.Log("Updating graph...");
+        // get number of item types per creature (assumes its the same for all)
+        int nItems = creatures[0].itemStash.items.Length;
+
+        // initialise array to store the averages
+        float [] averageValues = new float [nItems];
+        SetZero(averageValues);
+
+        // get all average perceived values
+        for (int i = 0; i < nCreatures; i++) {
+            for (int j = 0; j < nItems; j++) {
+                averageValues[j] += creatures[i].itemStash.items[j].perceivedValue;
+            }
+        }
+
+        // apply values to the graph
+        for (int i = 0; i < nItems; i++) {
+            averageValues[i] = averageValues[i]/nCreatures;
+            chartData.series[0].data[i] = new Data(averageValues[i]);
+        }
+        chartData.gameObject.GetComponent<Chart>().UpdateChart();
+    }
+
+    public void SetZero(float [] array) {
+        for (int i = 0; i < array.Length; i++) {
+            array[i] = 0;
         }
     }
 
@@ -118,6 +149,8 @@ public class MySceneDirector : Director
     }
 
     IEnumerator RunTimestep() {
+        updateGraph();
+
         for (int i = 0; i < creatures.Count; i++) {
             creatures[i].ProduceItems();
         }
@@ -136,40 +169,17 @@ public class MySceneDirector : Director
         yield return new WaitForSeconds(1f);
         
         if (dayNumber < N_DAYS) {
+            // consume items (no animation for this currently)
+            for (int i = 0; i < creatures.Count; i++) {
+                creatures[i].ConsumeItems();
+            }
+
+            // increase the date
             dayNumber++;
             StartCoroutine("RunTimestep");
         }
     }
 
-    //Define event actions
-    IEnumerator GraphAppear() { 
-        graph = Instantiate(graphPrefab);
-        graph.transform.SetParent(cameraTransform);
-        graph.transform.localPosition = new Vector3(-0.63f, 0.12f, 2.27f);
-        graph.transform.LookAt(cameraTransform);
-        graph.transform.RotateAround (graph.transform.position, transform.up, 180f);
-        graph.transform.localRotation = Quaternion.Euler(0, 0, 0); 
-        
-
-        graph.Initialize(
-            xTicStep: 5,
-            xMax: 50,
-            yMax: 50,
-            yTicStep: 5,
-            zTicStep: 1,
-            zMin: 0,
-            zMax: 5,
-            xAxisLength: 8,
-            yAxisLength: 5,
-            zAxisLength: 0,
-            scale: 0.07f, //True length is the axis length times scale. Scale controls thickness
-            xAxisLabelPos: "along",
-            xAxisLabelString: "Timestep",
-            yAxisLabelString: "Amount"
-        );
-        graph.ScaleUpFromZero();
-        yield return new WaitForSeconds(1);
-    }
 
     IEnumerator Disappear() {
         for (int i = 0; i < creatures.Count; i++) {
@@ -189,10 +199,7 @@ public class MySceneDirector : Director
         Useful for simulations whose duration is not predetermined
         */
         new SceneBlock(0f, Appear);
-        new SceneBlock(1f, GraphAppear);
-        // for (int i = 0; i < N_DAYS; i++) {
-            new SceneBlock(5f, RunTimestep);
-        // }
+        new SceneBlock(5f, RunTimestep);
         
         // new SceneBlock(17f, Disappear);
     }
