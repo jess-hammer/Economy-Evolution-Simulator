@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5111888308428846963}
   - component: {fileID: 5087001011974073693}
   - component: {fileID: 5094000482031308055}
+  - component: {fileID: 5532319177657437033}
   m_Layer: 0
   m_Name: Crown
   m_TagString: Untagged
@@ -81,3 +82,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5532319177657437033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108758118407486283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f656eb6eb82c8b9418866cf44bb1d5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

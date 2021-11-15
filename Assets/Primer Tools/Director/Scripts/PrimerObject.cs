@@ -74,6 +74,26 @@ public class PrimerObject : MonoBehaviour
         transform.localPosition = newPos; //Ensure we actually get exactly to newPos
     }
 
+    public void MoveAndDestroy(Vector3 newPos, float pauseTime, float duration = 0.5f, EaseMode ease = EaseMode.Cubic) {
+        StartCoroutine(moveAndDestroy(newPos, pauseTime, duration, ease));
+    }
+    private IEnumerator moveAndDestroy(Vector3 newPos, float pauseTime, float duration, EaseMode ease)
+    {
+        Vector3 initialPos = transform.localPosition;
+        float startTime = Time.time;
+        while (Time.time < startTime + duration)
+        {
+            float t = (Time.time - startTime) / duration;
+            t = Helpers.ApplyNormalizedEasing(t, ease);
+            transform.localPosition = Vector3.Lerp(initialPos, newPos, t);
+            yield return null;
+        }
+        transform.localPosition = newPos; //Ensure we actually get exactly to newPos
+
+        yield return new WaitForSeconds(pauseTime);
+        Destroy(this.gameObject);
+    }
+
     public void RotateTo(Vector3 newEulerAngles, float duration = 0.5f, EaseMode ease = EaseMode.Cubic) {
         Quaternion newQuaternion = Quaternion.Euler(newEulerAngles);
         StartCoroutine(rotateTo(newQuaternion, duration, ease));

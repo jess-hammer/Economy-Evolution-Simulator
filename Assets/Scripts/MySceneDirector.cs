@@ -118,10 +118,10 @@ public class MySceneDirector : Director
     }
 
     IEnumerator RunTimestep() {
-        // refresh the reputation colours
         for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].RefreshColor(lowReputationColor, highReputationColor);
+            creatures[i].ProduceItems();
         }
+        yield return new WaitForSeconds(3f);
 
         for (int i = 0; i < creatures.Count; i++) {
             creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 1f);

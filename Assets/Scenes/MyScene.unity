@@ -286,10 +286,10 @@ MonoBehaviour:
   textPrefab: {fileID: 0}
   graphPrefab: {fileID: 2914546190922299361, guid: 446a214e1103ca140833d940101d0488,
     type: 3}
-  creatures: []
+  dayNumber: 0
+  nCreatures: 20
   creaturePrefab: {fileID: 4763173241241534246, guid: f7f21ccbfa91b401bb44b8b1de2a86fc,
     type: 3}
-  nCreatures: 20
   creatureParent: {fileID: 538260871}
   cameraTransform: {fileID: 963194228}
   housePrefabs:
@@ -307,6 +307,8 @@ MonoBehaviour:
   - {fileID: 8838345117828292072, guid: c42554d3d30e24a89876ffdfd72ceb52, type: 3}
   - {fileID: 8862601122977135559, guid: 712a795cf5984433eb00c202c1d2907a, type: 3}
   - {fileID: 4308464658345067182, guid: d61dc7a7c72d94d768eac0b8f587bbbf, type: 3}
+  highReputationColor: {r: 0.8301887, g: 0.65078354, b: 0.20754717, a: 1}
+  lowReputationColor: {r: 0.33962262, g: 0.31238872, b: 0.3144545, a: 1}
 --- !u!4 &739953484
 Transform:
   m_ObjectHideFlags: 0
