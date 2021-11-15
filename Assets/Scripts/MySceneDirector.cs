@@ -36,6 +36,7 @@ public class MySceneDirector : Director
         for (int i = 0; i < creatures.Count; i++) {
             creatures[i].transform.localScale = Vector3.zero;
         }
+        chartData.gameObject.transform.localScale = Vector3.zero;
     }
 
     protected void spawnBlobs(int n) {
@@ -54,13 +55,16 @@ public class MySceneDirector : Director
             Vector3 housePos = creatures[i].homePos + (Vector3.Normalize(creatures[i].homePos) * HOUSE_DIST);
             housePos = new Vector3(housePos.x, HOUSE_HEIGHT, housePos.z);
             GameObject house = Instantiate(housePrefabs[(int)Random.Range(0, housePrefabs.Length - 1)], housePos, Quaternion.identity);
-            house.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
+            
+            // position the house nicely
+            float houseScale = 0.18f;
+            house.transform.localScale = new Vector3(houseScale, houseScale, houseScale);
             house.transform.LookAt(new Vector3(0, HOUSE_HEIGHT, 0));
+            house.transform.RotateAround (house.transform.position, house.transform.up, 180f);
         }
     }
 
     private void updateGraph() {
-        Debug.Log("Updating graph...");
         // get number of item types per creature (assumes its the same for all)
         int nItems = creatures[0].itemStash.items.Length;
 
@@ -122,6 +126,8 @@ public class MySceneDirector : Director
     }
     
     IEnumerator Appear() {
+        updateGraph();
+        chartData.gameObject.GetComponent<PrimerObject>().ScaleUpFromZero();
         for (int i = 0; i < creatures.Count; i++) {
             creatures[i].ScaleUpFromZero();
         }
@@ -149,8 +155,6 @@ public class MySceneDirector : Director
     }
 
     IEnumerator RunTimestep() {
-        updateGraph();
-
         for (int i = 0; i < creatures.Count; i++) {
             creatures[i].ProduceItems();
         }
@@ -168,11 +172,16 @@ public class MySceneDirector : Director
 
         yield return new WaitForSeconds(1f);
         
+        // if we have not reached the end of the simulation...
         if (dayNumber < N_DAYS) {
+            
             // consume items (no animation for this currently)
             for (int i = 0; i < creatures.Count; i++) {
                 creatures[i].ConsumeItems();
             }
+
+            // update the bar graph
+            updateGraph();
 
             // increase the date
             dayNumber++;

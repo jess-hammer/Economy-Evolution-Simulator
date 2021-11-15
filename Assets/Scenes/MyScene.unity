@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -195, y: 118}
-  m_SizeDelta: {x: -422.7496, y: -259.3762}
+  m_AnchoredPosition: {x: -195, y: 124.33699}
+  m_SizeDelta: {x: -422.7496, y: -272.0502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139971609
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.14901961}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -369,10 +369,10 @@ MonoBehaviour:
   creatureParent: {fileID: 538260871}
   cameraTransform: {fileID: 963194228}
   housePrefabs:
-  - {fileID: 1051674328336762218, guid: e12ceb348e4c0ab43928ba10b328ad55, type: 3}
-  - {fileID: 814090948053284427, guid: 21042b06aea703a4783dba642ed9d05d, type: 3}
+  - {fileID: 8673355594669288564, guid: c38443d59fbc57e48965abeefa6d3f24, type: 3}
+  - {fileID: 371539173470188015, guid: 49de95b0bb3d4b74f95756c69498b829, type: 3}
   - {fileID: 6327417926706890678, guid: 472df95078c2d8b4984be405a7639f58, type: 3}
-  - {fileID: 4767004319805502468, guid: 186bd9e9bd6c17f4e9f85a6dc189255e, type: 3}
+  - {fileID: 7419645748526018466, guid: 4ec48f7f8b2297543b8d598b9b35ad79, type: 3}
   itemModels:
   - {fileID: 379174351581137391, guid: d97364974f6ca4ba1a9433660254d03c, type: 3}
   - {fileID: 6931192368351822721, guid: 8c249a589cd77487cb551954a79b044a, type: 3}
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -649,6 +649,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1293676182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1251252945648842, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+    type: 3}
+  m_PrefabInstance: {fileID: 1494116148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1293676183 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224194816693436920, guid: 545a89a83bfd3a745aebebcd0edbfa09,
@@ -661,10 +667,22 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1494116148}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1293676182}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4f4c4d6e37b338458bdbbdc1c2f0a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1293676187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293676182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f656eb6eb82c8b9418866cf44bb1d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1494116148
@@ -760,23 +778,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
+      propertyPath: series.Array.data[0].data.Array.data[0].value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: series.Array.data[0].data.Array.data[1].value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: series.Array.data[0].data.Array.data[2].value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: series.Array.data[0].data.Array.data[3].value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: series.Array.data[0].data.Array.data[4].value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
       propertyPath: series.Array.data[0].data.Array.data[5].value
-      value: 20
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
       propertyPath: series.Array.data[0].data.Array.data[6].value
-      value: 20
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
       propertyPath: series.Array.data[0].data.Array.data[7].value
-      value: 20
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 114291916322741314, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
       propertyPath: series.Array.data[0].data.Array.data[8].value
-      value: 20
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
@@ -787,6 +830,141 @@ PrefabInstance:
         type: 3}
       propertyPath: title.mainTitle
       value: Average Perceived Values
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[0].b
+      value: 0.48393556
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[0].g
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[0].r
+      value: 0.5423634
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[1].b
+      value: 0.4818886
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[1].g
+      value: 0.7497807
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[1].r
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[2].b
+      value: 0.5124178
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[2].g
+      value: 0.43137258
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[2].r
+      value: 0.90588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[3].b
+      value: 0.6083571
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[3].g
+      value: 0.8705483
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[3].r
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[4].b
+      value: 0.6320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[4].g
+      value: 0.5951618
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[4].r
+      value: 0.5933161
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[5].b
+      value: 0.7231469
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[5].g
+      value: 0.71008366
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[5].r
+      value: 0.764151
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[6].b
+      value: 0.3251114
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[6].g
+      value: 0.31617126
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[6].r
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[7].b
+      value: 0.7229207
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[7].g
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[7].r
+      value: 0.37348703
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[8].b
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[8].g
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
+        type: 3}
+      propertyPath: plotOptions.dataColor.Array.data[8].r
+      value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 114397642427736120, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
