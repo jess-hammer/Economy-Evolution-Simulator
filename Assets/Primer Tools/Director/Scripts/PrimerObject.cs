@@ -113,8 +113,10 @@ public class PrimerObject : MonoBehaviour
     }
 
     public void LookToward(Vector3 toLookAt, float duration = 0.5f, EaseMode ease = EaseMode.Cubic) {
-        Quaternion orientation = Quaternion.LookRotation(toLookAt - transform.position);
-        StartCoroutine(rotateTo(orientation, duration, ease));
+        if (toLookAt - transform.position != Vector3.zero) {
+            Quaternion orientation = Quaternion.LookRotation(toLookAt - transform.position);
+            StartCoroutine(rotateTo(orientation, duration, ease));
+        }
     }
 
     public void RotateByEuler(Vector3 eulerRotation, float duration = 0.5f, EaseMode ease = EaseMode.SmoothStep) {

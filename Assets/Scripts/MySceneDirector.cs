@@ -19,7 +19,7 @@ public class MySceneDirector : Director
     public Color lowReputationColor;
     public ChartData chartData;
 
-    List<MyCreature> creatures = null;
+    public List<MyCreature> creatures = null;
     private float RADIUS = 4f;
     private float HEIGHT = 0.3f;
     private float HOUSE_HEIGHT = 0f;
@@ -160,8 +160,9 @@ public class MySceneDirector : Director
         }
         yield return new WaitForSeconds(3f);
 
+        MyCreature target = creatures[Random.Range(0, nCreatures)];
         for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 1f);
+            creatures[i].TravelTowards(target.gameObject, duration: 1f);
         }
         
         yield return new WaitForSeconds(1f);
