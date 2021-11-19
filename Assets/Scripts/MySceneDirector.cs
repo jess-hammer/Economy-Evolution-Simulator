@@ -156,30 +156,12 @@ public class MySceneDirector : Director
 
     IEnumerator RunTimestep() {
         for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].ProduceItems();
+            creatures[i].ExecuteBehaviour(3f);
         }
         yield return new WaitForSeconds(3f);
-
-        MyCreature target = creatures[Random.Range(0, nCreatures)];
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].TravelTowards(target.gameObject, duration: 1f);
-        }
-        
-        yield return new WaitForSeconds(1f);
-        
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(creatures[i].homePos, duration: 1f);
-        }
-
-        yield return new WaitForSeconds(1f);
         
         // if we have not reached the end of the simulation...
         if (dayNumber < N_DAYS) {
-            
-            // consume items (no animation for this currently)
-            for (int i = 0; i < creatures.Count; i++) {
-                creatures[i].ConsumeItems();
-            }
 
             // update the bar graph
             updateGraph();

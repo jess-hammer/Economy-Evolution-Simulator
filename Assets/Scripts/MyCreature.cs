@@ -112,8 +112,11 @@ public class MyCreature : PrimerObject
             }
         }
     }
-
-    public void DecideWhatToDo() {
+    // TODO actually run this function
+    public void ExecuteBehaviour(float duration) {
+        StartCoroutine(executeBehaviour(duration));
+    }
+    private IEnumerator executeBehaviour(float duration) {
         itemNeeded = calculateItemNeeded();
 
         // if the creature needs an item
@@ -126,12 +129,11 @@ public class MyCreature : PrimerObject
         }
         else {
             currentAction = ActionChoice.GIFTING;
-            GiveGift();
+            GiveGift(duration);
         }
-    }
+        yield return new WaitForSeconds(duration);
 
-    public void GiveGift() {
-        StartCoroutine(giveGift(pickGiftReceiver()));
+        ConsumeItems();
     }
 
     // TODO finish this function
@@ -139,11 +141,31 @@ public class MyCreature : PrimerObject
         return neighboursInOrder[(int)UnityEngine.Random.Range(0, 5)];
     }
 
-    public IEnumerator giveGift(MyCreature receiver) {
-        TravelTowards(receiver.gameObject);
-        yield return new WaitForSeconds(0.5f);
+    // TODO finish this function
+    private int pickGiftItem() {
+        int index = (int)UnityEngine.Random.Range(0, itemStash.items.Length);
+        return index;
+    }
 
-        // TODO transfer the gift
+    public void GiveGift(float duration) {
+        StartCoroutine(giveGift(duration, pickGiftReceiver()));
+    }
+
+    public IEnumerator giveGift(float duration, MyCreature receiver) {
+        float durationPart = duration/3;
+        TravelTowards(receiver.gameObject, durationPart);
+        yield return new WaitForSeconds(durationPart);
+
+        // transfer the gift
+        // TODO change quantity
+        int i = pickGiftItem();
+        PrimerObject itemObject = Instantiate(mySceneDirector.itemModels[i], this.transform.position, Quaternion.identity).GetComponent<PrimerObject>();
+        itemObject.MoveAndDestroy(receiver.transform.position, 0, durationPart);
+        yield return new WaitForSeconds(durationPart);
+            
+        // walk home
+        WalkTo(homePos, duration: durationPart);
+        yield return new WaitForSeconds(durationPart);
     }
 
     public bool CanProduceItem(ItemName itemName) {
@@ -177,6 +199,7 @@ public class MyCreature : PrimerObject
         }
     }
 
+    // TODO fix this function
     private float calculateStepSize() {
         float MAX_SIZE = 0.1f;
         float MIN_SIZE = 0.001f;
@@ -212,12 +235,6 @@ public class MyCreature : PrimerObject
             }
             daysSinceLastConsumed[i] += 1;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
 
