@@ -157,10 +157,10 @@ RectTransform:
   m_Father: {fileID: 970861514}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -195, y: 124.33699}
-  m_SizeDelta: {x: -422.7496, y: -272.0502}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 205, y: -110.16301}
+  m_SizeDelta: {x: 377.2504, y: 196.9498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139971609
 MonoBehaviour:
@@ -386,6 +386,7 @@ MonoBehaviour:
   highReputationColor: {r: 0.8301887, g: 0.65078354, b: 0.20754717, a: 1}
   lowReputationColor: {r: 0.33962262, g: 0.31238872, b: 0.3144545, a: 1}
   chartData: {fileID: 1293676184}
+  creatures: []
 --- !u!4 &739953484
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,12 +1015,12 @@ PrefabInstance:
     - target: {fileID: 224194816693436920, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224194816693436920, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1.8626
+      value: 2.8626099
       objectReference: {fileID: 0}
     - target: {fileID: 224194816693436920, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
@@ -1059,12 +1060,12 @@ PrefabInstance:
     - target: {fileID: 224194816693436920, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224194816693436920, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.9312897
+      value: 0.43128967
       objectReference: {fileID: 0}
     - target: {fileID: 224194816693436920, guid: 545a89a83bfd3a745aebebcd0edbfa09,
         type: 3}

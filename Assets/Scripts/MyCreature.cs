@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using System.Linq;
 
 public class MyCreature : PrimerObject
 {
     public ItemStash itemStash;
-    public float [] productionRates;
     public int [] daysSinceLastConsumed;
     public Vector3 homePos;
     public float reputation = 0;
@@ -35,7 +33,6 @@ public class MyCreature : PrimerObject
     void Start() {
         mySceneDirector = GameObject.Find("Scene Director").GetComponent<MySceneDirector>();
         itemStash = new ItemStash();
-        initialiseProductionRates();
         initialiseDaysSinceLastConsumed();
         initialiseNeighbours();
         
@@ -68,19 +65,6 @@ public class MyCreature : PrimerObject
         material.SetColor("_EmissionColor", newColor);
     }
 
-    private void initialiseProductionRates() {
-        int n = itemStash.items.Length;
-        productionRates = new float [n];
-        for (int i = 0; i < n; i++) {
-            productionRates[i] = UnityEngine.Random.Range(0f, 1f);
-
-            // if production rate is too low just set it to 0
-            if (productionRates[i] < 0.5) {
-                productionRates[i] = 0;
-            }
-        }
-    }
-
     private void initialiseDaysSinceLastConsumed() {
         int n = itemStash.items.Length;
         daysSinceLastConsumed = new int [n];
@@ -95,20 +79,26 @@ public class MyCreature : PrimerObject
         return 1/(1 + Mathf.Pow(2.718f, -a * (x + b)));
     }
 
-    public void ProduceItems() {
-        StartCoroutine("produceItems");
+    public void ProduceItems(int nTimes, float duration) {
+        StartCoroutine(produceItems(nTimes, duration));
     }
-    private IEnumerator produceItems() {
-        for (int i = 0; i < itemStash.items.Length; i++) {
-            if (UnityEngine.Random.Range(0f, 1f) < productionRates[i]) {
+    private IEnumerator produceItems(int nTimes, float duration) {
+        for (int i = 0; i < nTimes; i++) {
+            int itemIndex = (int)Random.Range(0, itemStash.items.Length - 1);
+            float randNum = Random.Range(0f, 1f);
+            
+            Item item = itemStash.items[itemIndex];
+            if (randNum < item.productionChance) {
                 // can produce up to three items of each type
-                int amountProducing = (int)(3 * productionRates[i]);
-                itemStash.items[i].quantity += amountProducing;
+                int amountProducing = (int)Random.Range(0, 3f);
 
-                // assumes index corresponds to correct gameobject
-                PrimerObject itemObject = Instantiate(mySceneDirector.itemModels[i], this.homePos, Quaternion.identity).GetComponent<PrimerObject>();
-                itemObject.MoveAndDestroy(new Vector3(homePos.x, homePos.y + 0.5f, homePos.z), 0, 0.5f);
-                yield return new WaitForSeconds(0.5f);
+                // update the quantity of the item
+                item.quantity += amountProducing;
+
+                // visualise production of item
+                PrimerObject itemObject = Instantiate(mySceneDirector.itemModels[itemIndex], this.homePos, Quaternion.identity).GetComponent<PrimerObject>();
+                itemObject.MoveAndDestroy(new Vector3(homePos.x, homePos.y + 0.5f, homePos.z), 0, duration/nTimes);
+                yield return new WaitForSeconds(duration/nTimes);
             }
         }
     }
@@ -119,19 +109,15 @@ public class MyCreature : PrimerObject
     private IEnumerator executeBehaviour(float duration) {
         itemNeeded = calculateItemNeeded();
 
-        // if the creature needs an item
-        if (itemNeeded != null) {
-            // if it can produce the item itself
-            if (CanProduceItem(itemNeeded.itemName)) {
-                currentAction = ActionChoice.PRODUCING;
-                ProduceItems();
-            }
-        }
-        else {
-            currentAction = ActionChoice.GIFTING;
-            GiveGift(duration);
-        }
-        yield return new WaitForSeconds(duration);
+        currentAction = ActionChoice.PRODUCING;
+        ProduceItems(2, duration/3);
+        yield return new WaitForSeconds(duration/3);
+        
+        
+        currentAction = ActionChoice.GIFTING;
+        GiveGift(duration/3 * 2);
+        
+        yield return new WaitForSeconds(duration/3 * 2);
 
         ConsumeItems();
     }
@@ -168,16 +154,6 @@ public class MyCreature : PrimerObject
         yield return new WaitForSeconds(durationPart);
     }
 
-    public bool CanProduceItem(ItemName itemName) {
-        for (int i = 0; i < itemStash.items.Length; i++) {
-            if (itemName == itemStash.items[i].itemName) {
-                if (productionRates[i] > 0.5f)
-                    return true;
-            }
-        }
-        return false;
-    }
-
     public void TravelTowards(GameObject target, float duration = 0.5f) {
         StartCoroutine(travelTowards(target, duration));
     }
@@ -209,7 +185,7 @@ public class MyCreature : PrimerObject
     public Item calculateItemNeeded() {
         Item currItem = null;
         for (int i = 0; i < itemStash.items.Length; i++) {
-            if (daysSinceLastConsumed[i] > itemStash.items[i].consumeRate && itemStash.items[i].quantity < 0) {
+            if (daysSinceLastConsumed[i] > itemStash.items[i].consumeRate && itemStash.items[i].quantity <= 0) {
                 if (currItem != null) {
                     if (itemStash.items[i].inherentValue > currItem.inherentValue) {
                         currItem = itemStash.items[i];
@@ -221,7 +197,6 @@ public class MyCreature : PrimerObject
         }
         if (currItem == null)
             return null;
-        Debug.Log("Need " + currItem.itemName);
         return currItem;
     }
 
