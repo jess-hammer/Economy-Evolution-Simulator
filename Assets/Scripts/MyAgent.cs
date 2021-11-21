@@ -14,10 +14,7 @@ public class MyAgent : PrimerObject
     private static float minReputation = 0;
     private MySceneDirector mySceneDirector;
 
-    public ActionChoice currentAction = ActionChoice.NULL;
-    public MyAgent currentlySeeking = null;
     public Item itemNeeded;
-
     public float [] opinions;
 
     public Queue<Debt> activeDebts = new Queue<Debt>();
@@ -26,7 +23,6 @@ public class MyAgent : PrimerObject
     public List<Debt> pastCredits = new List<Debt>();
 
     private Material material;
-    private static float INTERACTION_RADIUS = 0.7f;
     private MyAgent [] neighboursInOrder;
 
     public Vector3 meetingPlacePos;
@@ -36,29 +32,10 @@ public class MyAgent : PrimerObject
         mySceneDirector = GameObject.Find("Scene Director").GetComponent<MySceneDirector>();
         itemStash = new ItemStash();
         initialiseDaysSinceLastConsumed();
-        initialiseNeighbours();
         
         // set material object
         material = this.gameObject.GetComponentInChildren<MeshRenderer>().materials[0];
         RefreshColor(mySceneDirector.lowReputationColor, mySceneDirector.highReputationColor);
-    }
-
-    private void initialiseNeighbours() {
-        int len = mySceneDirector.nAgents;
-        GameObject [] neighbours = new GameObject [len];
-
-        // copy array values from other script
-        for (int i = 0; i < len; i++) {
-            neighbours[i] = mySceneDirector.agents[i].gameObject;
-        }
-        // sort by physical distance
-        neighbours = neighbours.OrderBy(go => Vector3.Distance(go.transform.position, transform.position)).ToArray();
-        
-        // disgustingly typecast the array
-        neighboursInOrder = new MyAgent [len];
-        for (int i = 0; i < len; i++) {
-            neighboursInOrder[i] = neighbours[i].GetComponent<MyAgent>();
-        }
     }
 
     public void RefreshColor(Color col1, Color col2) {
@@ -84,6 +61,7 @@ public class MyAgent : PrimerObject
     public void ProduceItems(int nTimes, float duration) {
         StartCoroutine(produceItems(nTimes, duration));
     }
+
     private IEnumerator produceItems(int nTimes, float duration) {
         for (int i = 0; i < nTimes; i++) {
             int itemIndex = (int)Random.Range(0, itemStash.items.Length - 1);
@@ -104,19 +82,17 @@ public class MyAgent : PrimerObject
             }
         }
     }
-    // TODO actually run this function
+    
     public void ExecuteBehaviour(float duration) {
         StartCoroutine(executeBehaviour(duration));
     }
+
     private IEnumerator executeBehaviour(float duration) {
         itemNeeded = calculateItemNeeded();
 
-        currentAction = ActionChoice.PRODUCING;
         ProduceItems(2, duration/4);
         yield return new WaitForSeconds(duration/4);
         
-        
-        currentAction = ActionChoice.GIFTING;
         GoToRandomMeetingPlace(duration/4);
         yield return new WaitForSeconds(duration/4);
 
@@ -166,34 +142,6 @@ public class MyAgent : PrimerObject
         WalkTo(stopPos, duration: duration);
     }
 
-    public void TravelTowards(GameObject target, float duration = 0.5f) {
-        StartCoroutine(travelTowards(target, duration));
-    }
-
-    private IEnumerator travelTowards(GameObject target, float duration) {
-        float stepSize = calculateStepSize();
-        float startTime = Time.time;
-
-        while (Time.time < startTime + duration)
-        {   
-            if (Vector3.Distance(target.transform.position, transform.position) > INTERACTION_RADIUS) {
-                Vector3 direction = Vector3.Normalize(target.transform.position - transform.position);
-                transform.position =  transform.position + direction * stepSize;
-                
-                if (target.transform.position - transform.position != Vector3.zero)
-                    transform.rotation = Quaternion.LookRotation (target.transform.position - transform.position);
-            }
-            yield return null;
-        }
-    }
-
-    // TODO fix this function
-    private float calculateStepSize() {
-        float MAX_SIZE = 0.1f;
-        float MIN_SIZE = 0.001f;
-        return MAX_SIZE;
-    }
-
     public Item calculateItemNeeded() {
         Item currItem = null;
         for (int i = 0; i < itemStash.items.Length; i++) {
@@ -233,9 +181,3 @@ public class Debt {
     public bool isRepayed;
 }
 
-public enum ActionChoice {
-    NULL,
-    PRODUCING,
-    GIFTING,
-    SEEKING
-}
