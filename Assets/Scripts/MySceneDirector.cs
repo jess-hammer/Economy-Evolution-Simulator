@@ -7,11 +7,11 @@ public class MySceneDirector : Director
 {
     [Space]
     public int dayNumber = 0;
-    public int nCreatures;
+    public int nAgents;
     
     [Space]
-    public MyCreature creaturePrefab;
-    public GameObject creatureParent;
+    public MyAgent agentPrefab;
+    public GameObject agentParent;
     public Transform cameraTransform;
     public GameObject [] housePrefabs;
     public GameObject [] itemModels; // index correspond to itemName enum number
@@ -20,7 +20,7 @@ public class MySceneDirector : Director
     public ChartData chartData;
     public GameObject meetingPlaceParent;
 
-    public List<MyCreature> creatures = null;
+    public List<MyAgent> agents = null;
     private float RADIUS = 4f;
     private float HEIGHT = 0.3f;
     private float HOUSE_HEIGHT = 0f;
@@ -29,31 +29,31 @@ public class MySceneDirector : Director
 
     protected override void Awake() {
         base.Awake();
-        spawnBlobs(nCreatures);
+        spawnBlobs(nAgents);
         spawnHouses();
         camRig.GoToStandardPositions();
 
         // set object scale to zero if they're going to scale in
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].transform.localScale = Vector3.zero;
+        for (int i = 0; i < agents.Count; i++) {
+            agents[i].transform.localScale = Vector3.zero;
         }
         chartData.gameObject.transform.localScale = Vector3.zero;
     }
 
     protected void spawnBlobs(int n) {
-        creatures = new List<MyCreature>();
+        agents = new List<MyAgent>();
         for (int i = 0; i < n; i++) {
             Vector3 homePos = getHomePos(i);
-            MyCreature newCreature = Instantiate(creaturePrefab, homePos, Quaternion.identity);
-            newCreature.transform.SetParent(creatureParent.transform);
-            newCreature.homePos = homePos;
-            creatures.Add(newCreature);
+            MyAgent newAgent = Instantiate(agentPrefab, homePos, Quaternion.identity);
+            newAgent.transform.SetParent(agentParent.transform);
+            newAgent.homePos = homePos;
+            agents.Add(newAgent);
         }
     }
 
     protected void spawnHouses() {
-        for (int i = 0; i < nCreatures; i++) {
-            Vector3 housePos = creatures[i].homePos + (Vector3.Normalize(creatures[i].homePos) * HOUSE_DIST);
+        for (int i = 0; i < nAgents; i++) {
+            Vector3 housePos = agents[i].homePos + (Vector3.Normalize(agents[i].homePos) * HOUSE_DIST);
             housePos = new Vector3(housePos.x, HOUSE_HEIGHT, housePos.z);
             GameObject house = Instantiate(housePrefabs[(int)Random.Range(0, housePrefabs.Length - 1)], housePos, Quaternion.identity);
             
@@ -66,23 +66,23 @@ public class MySceneDirector : Director
     }
 
     private void updateGraph() {
-        // get number of item types per creature (assumes its the same for all)
-        int nItems = creatures[0].itemStash.items.Length;
+        // get number of item types per agent (assumes its the same for all)
+        int nItems = agents[0].itemStash.items.Length;
 
         // initialise array to store the averages
         float [] averageValues = new float [nItems];
         SetZero(averageValues);
 
         // get all average perceived values
-        for (int i = 0; i < nCreatures; i++) {
+        for (int i = 0; i < nAgents; i++) {
             for (int j = 0; j < nItems; j++) {
-                averageValues[j] += creatures[i].itemStash.items[j].perceivedValue;
+                averageValues[j] += agents[i].itemStash.items[j].perceivedValue;
             }
         }
 
         // apply values to the graph
         for (int i = 0; i < nItems; i++) {
-            averageValues[i] = averageValues[i]/nCreatures;
+            averageValues[i] = averageValues[i]/nAgents;
             chartData.series[0].data[i] = new Data(averageValues[i]);
         }
         chartData.gameObject.GetComponent<Chart>().UpdateChart();
@@ -97,7 +97,7 @@ public class MySceneDirector : Director
     private Vector3 getHomePos(int index) {
         float xPos;
         float zPos;
-        float nPerSide = nCreatures/4;
+        float nPerSide = nAgents/4;
         float offset = nPerSide/(RADIUS * 2);
 
         zPos = ((index % (nPerSide)) / nPerSide) * RADIUS * 2 - RADIUS + offset;
@@ -129,8 +129,8 @@ public class MySceneDirector : Director
     IEnumerator Appear() {
         updateGraph();
         chartData.gameObject.GetComponent<PrimerObject>().ScaleUpFromZero();
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].ScaleUpFromZero();
+        for (int i = 0; i < agents.Count; i++) {
+            agents[i].ScaleUpFromZero();
         }
         yield return null;
     }
@@ -142,22 +142,22 @@ public class MySceneDirector : Director
     }
 
     IEnumerator MoveAround() {
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 1f);
+        for (int i = 0; i < agents.Count; i++) {
+            agents[i].WalkTo(new Vector3(Random.Range(-3f, 3f), HEIGHT, Random.Range(-3f, 3f)), duration: 1f);
         }
         
         yield return new WaitForSeconds(1f);
         
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].WalkTo(creatures[i].homePos, duration: 1f);
+        for (int i = 0; i < agents.Count; i++) {
+            agents[i].WalkTo(agents[i].homePos, duration: 1f);
         }
 
         yield return null;
     }
 
     IEnumerator RunTimestep() {
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].ExecuteBehaviour(3f);
+        for (int i = 0; i < agents.Count; i++) {
+            agents[i].ExecuteBehaviour(3f);
         }
         yield return new WaitForSeconds(3f);
         
@@ -175,8 +175,8 @@ public class MySceneDirector : Director
 
 
     IEnumerator Disappear() {
-        for (int i = 0; i < creatures.Count; i++) {
-            creatures[i].ScaleDownToZero();
+        for (int i = 0; i < agents.Count; i++) {
+            agents[i].ScaleDownToZero();
         }
         
         yield return null;

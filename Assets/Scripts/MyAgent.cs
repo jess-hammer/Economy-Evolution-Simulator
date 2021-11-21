@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class MyCreature : PrimerObject
+public class MyAgent : PrimerObject
 {
     public ItemStash itemStash;
     public int [] daysSinceLastConsumed;
@@ -15,7 +15,7 @@ public class MyCreature : PrimerObject
     private MySceneDirector mySceneDirector;
 
     public ActionChoice currentAction = ActionChoice.NULL;
-    public MyCreature currentlySeeking = null;
+    public MyAgent currentlySeeking = null;
     public Item itemNeeded;
 
     public float [] opinions;
@@ -27,7 +27,7 @@ public class MyCreature : PrimerObject
 
     private Material material;
     private static float INTERACTION_RADIUS = 0.7f;
-    private MyCreature [] neighboursInOrder;
+    private MyAgent [] neighboursInOrder;
 
     public Vector3 meetingPlacePos;
 
@@ -44,20 +44,20 @@ public class MyCreature : PrimerObject
     }
 
     private void initialiseNeighbours() {
-        int len = mySceneDirector.nCreatures;
+        int len = mySceneDirector.nAgents;
         GameObject [] neighbours = new GameObject [len];
 
         // copy array values from other script
         for (int i = 0; i < len; i++) {
-            neighbours[i] = mySceneDirector.creatures[i].gameObject;
+            neighbours[i] = mySceneDirector.agents[i].gameObject;
         }
         // sort by physical distance
         neighbours = neighbours.OrderBy(go => Vector3.Distance(go.transform.position, transform.position)).ToArray();
         
         // disgustingly typecast the array
-        neighboursInOrder = new MyCreature [len];
+        neighboursInOrder = new MyAgent [len];
         for (int i = 0; i < len; i++) {
-            neighboursInOrder[i] = neighbours[i].GetComponent<MyCreature>();
+            neighboursInOrder[i] = neighbours[i].GetComponent<MyAgent>();
         }
     }
 
@@ -120,8 +120,8 @@ public class MyCreature : PrimerObject
         GoToRandomMeetingPlace(duration/4);
         yield return new WaitForSeconds(duration/4);
 
-        // GiveGift(duration, pickGiftReceiver(), pickGiftItem())
-        // yield return new WaitForSeconds(duration/4);
+        GiveGifts(duration/4);
+        yield return new WaitForSeconds(duration/4);
 
         GoHome(duration/4);
         yield return new WaitForSeconds(duration/4);
@@ -129,9 +129,13 @@ public class MyCreature : PrimerObject
         ConsumeItems();
     }
 
-    // TODO finish this function
-    private MyCreature pickGiftReceiver() {
-        return neighboursInOrder[(int)UnityEngine.Random.Range(0, 5)];
+    public void GiveGifts(float duration) {
+        // loop through all the Agents
+        for (int i = 0; i < mySceneDirector.nAgents; i++) {
+            if (mySceneDirector.agents[i].meetingPlacePos == meetingPlacePos) {
+                GiveGift(duration, mySceneDirector.agents[i], pickGiftItem());
+            }
+        }
     }
 
     // TODO finish this function
@@ -140,7 +144,7 @@ public class MyCreature : PrimerObject
         return index;
     }
 
-    public void GiveGift(float duration, MyCreature receiver, int giftItemIndex) {
+    public void GiveGift(float duration, MyAgent receiver, int giftItemIndex) {
         // transfer the gift
         // TODO change quantity
         PrimerObject itemObject = Instantiate(mySceneDirector.itemModels[giftItemIndex], this.transform.position, Quaternion.identity).GetComponent<PrimerObject>();
@@ -156,9 +160,9 @@ public class MyCreature : PrimerObject
         int randNum = (int)Random.Range(1, places.Length - 1); // not sure if this includes the parent
         meetingPlacePos = places[randNum].position;
 
-        // Vector3 currPos = this.transform.position;
+        Vector3 currPos = this.transform.position;
         Vector3 stopPos = new Vector3(meetingPlacePos.x, this.transform.position.y, meetingPlacePos.z);
-        // stopPos = currPos + ((stopPos - currPos) * 0.9f);
+        stopPos = currPos + ((stopPos - currPos) * 0.9f);
         WalkTo(stopPos, duration: duration);
     }
 
@@ -223,8 +227,8 @@ public class MyCreature : PrimerObject
 
 public class Debt {
     public int date;
-    public MyCreature debtor;
-    public MyCreature creditor;
+    public MyAgent debtor;
+    public MyAgent creditor;
     public float value;
     public bool isRepayed;
 }

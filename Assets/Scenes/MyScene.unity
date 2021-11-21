@@ -429,7 +429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 538260872}
   m_Layer: 0
-  m_Name: CreatureParent
+  m_Name: AgentParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,10 +588,10 @@ MonoBehaviour:
   graphPrefab: {fileID: 2914546190922299361, guid: 446a214e1103ca140833d940101d0488,
     type: 3}
   dayNumber: 0
-  nCreatures: 20
-  creaturePrefab: {fileID: 4763173241241534246, guid: f7f21ccbfa91b401bb44b8b1de2a86fc,
+  nAgents: 20
+  agentPrefab: {fileID: 4763173241241534246, guid: f7f21ccbfa91b401bb44b8b1de2a86fc,
     type: 3}
-  creatureParent: {fileID: 538260871}
+  agentParent: {fileID: 538260871}
   cameraTransform: {fileID: 963194228}
   housePrefabs:
   - {fileID: 8673355594669288564, guid: c38443d59fbc57e48965abeefa6d3f24, type: 3}
@@ -612,7 +612,7 @@ MonoBehaviour:
   lowReputationColor: {r: 0.33962262, g: 0.31238872, b: 0.3144545, a: 1}
   chartData: {fileID: 1293676184}
   meetingPlaceParent: {fileID: 944420970}
-  creatures: []
+  agents: []
 --- !u!4 &739953484
 Transform:
   m_ObjectHideFlags: 0
