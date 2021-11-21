@@ -18,6 +18,7 @@ public class MySceneDirector : Director
     public Color highReputationColor;
     public Color lowReputationColor;
     public ChartData chartData;
+    public GameObject meetingPlaceParent;
 
     public List<MyCreature> creatures = null;
     private float RADIUS = 4f;

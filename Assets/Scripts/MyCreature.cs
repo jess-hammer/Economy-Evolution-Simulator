@@ -29,6 +29,8 @@ public class MyCreature : PrimerObject
     private static float INTERACTION_RADIUS = 0.7f;
     private MyCreature [] neighboursInOrder;
 
+    public Vector3 meetingPlacePos;
+
     // Start is called before the first frame update
     void Start() {
         mySceneDirector = GameObject.Find("Scene Director").GetComponent<MySceneDirector>();
@@ -110,14 +112,19 @@ public class MyCreature : PrimerObject
         itemNeeded = calculateItemNeeded();
 
         currentAction = ActionChoice.PRODUCING;
-        ProduceItems(2, duration/3);
-        yield return new WaitForSeconds(duration/3);
+        ProduceItems(2, duration/4);
+        yield return new WaitForSeconds(duration/4);
         
         
         currentAction = ActionChoice.GIFTING;
-        GiveGift(duration/3 * 2);
-        
-        yield return new WaitForSeconds(duration/3 * 2);
+        GoToRandomMeetingPlace(duration/4);
+        yield return new WaitForSeconds(duration/4);
+
+        // GiveGift(duration, pickGiftReceiver(), pickGiftItem())
+        // yield return new WaitForSeconds(duration/4);
+
+        GoHome(duration/4);
+        yield return new WaitForSeconds(duration/4);
 
         ConsumeItems();
     }
@@ -133,25 +140,26 @@ public class MyCreature : PrimerObject
         return index;
     }
 
-    public void GiveGift(float duration) {
-        StartCoroutine(giveGift(duration, pickGiftReceiver()));
-    }
-
-    public IEnumerator giveGift(float duration, MyCreature receiver) {
-        float durationPart = duration/3;
-        TravelTowards(receiver.gameObject, durationPart);
-        yield return new WaitForSeconds(durationPart);
-
+    public void GiveGift(float duration, MyCreature receiver, int giftItemIndex) {
         // transfer the gift
         // TODO change quantity
-        int i = pickGiftItem();
-        PrimerObject itemObject = Instantiate(mySceneDirector.itemModels[i], this.transform.position, Quaternion.identity).GetComponent<PrimerObject>();
-        itemObject.MoveAndDestroy(receiver.transform.position, 0, durationPart);
-        yield return new WaitForSeconds(durationPart);
-            
-        // walk home
-        WalkTo(homePos, duration: durationPart);
-        yield return new WaitForSeconds(durationPart);
+        PrimerObject itemObject = Instantiate(mySceneDirector.itemModels[giftItemIndex], this.transform.position, Quaternion.identity).GetComponent<PrimerObject>();
+        itemObject.MoveAndDestroy(receiver.transform.position, 0, duration);
+    }
+
+    public void GoHome(float duration) {
+        WalkTo(homePos, duration: duration);
+    }
+
+    public void GoToRandomMeetingPlace(float duration) {
+        Transform [] places = mySceneDirector.meetingPlaceParent.GetComponentsInChildren<Transform>();
+        int randNum = (int)Random.Range(1, places.Length - 1); // not sure if this includes the parent
+        meetingPlacePos = places[randNum].position;
+
+        // Vector3 currPos = this.transform.position;
+        Vector3 stopPos = new Vector3(meetingPlacePos.x, this.transform.position.y, meetingPlacePos.z);
+        // stopPos = currPos + ((stopPos - currPos) * 0.9f);
+        WalkTo(stopPos, duration: duration);
     }
 
     public void TravelTowards(GameObject target, float duration = 0.5f) {
