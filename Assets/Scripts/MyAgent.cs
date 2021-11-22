@@ -108,23 +108,64 @@ public class MyAgent : PrimerObject
     public void GiveGifts(float duration) {
         // loop through all the Agents
         for (int i = 0; i < mySceneDirector.nAgents; i++) {
+            // if the agents are at the same meeting place
             if (mySceneDirector.agents[i].meetingPlacePos == meetingPlacePos) {
-                GiveGift(duration, mySceneDirector.agents[i], pickGiftItem());
+                // randomly pick gift
+                int giftItemIndex = pickGiftItem();
+                if (giftItemIndex >= 0)
+                    // give the gift
+                    GiveGift(duration, mySceneDirector.agents[i], giftItemIndex);
             }
         }
     }
 
-    // TODO finish this function
+    // TODO pick gifts based on actual logic, not randomness?
+    // TODO consider weight and distance?
     private int pickGiftItem() {
-        int index = (int)UnityEngine.Random.Range(0, itemStash.items.Length);
-        return index;
+        // initialise array
+        int [] indexArray = new int [itemStash.items.Length];
+        for (int i = 0; i < indexArray.Length; i++) {
+            indexArray[i] = i;
+        }
+        // shuffle array in order to randomly pick an item each time
+        Shuffle(indexArray);
+
+        // pick item if have enough
+        for (int i = 0; i < indexArray.Length; i++) {
+            if (itemStash.items[indexArray[i]].quantity > 0) {
+                return indexArray[i];
+            }
+        }
+        return -1;
+    }
+    
+    void Shuffle(int[] array) {
+        int p = array.Length;
+        for (int n = p - 1; n > 0; n--) {
+            int r = Random.Range(0, n);
+            int t = array[r];
+            array[r] = array[n];
+            array[n] = t;
+        }
     }
 
     public void GiveGift(float duration, MyAgent receiver, int giftItemIndex) {
         // transfer the gift
-        // TODO change quantity
         PrimerObject itemObject = Instantiate(mySceneDirector.itemModels[giftItemIndex], this.transform.position, Quaternion.identity).GetComponent<PrimerObject>();
         itemObject.MoveAndDestroy(receiver.transform.position, 0, duration);
+
+        // actually update the quantities
+        int giftQuantity = Random.Range(1, itemStash.items[giftItemIndex].quantity);
+
+        // remove from this agents stash
+        itemStash.items[giftItemIndex].quantity -= giftQuantity;
+        if (itemStash.items[giftItemIndex].quantity < 0)
+            Debug.Log("warning: item quantity is negative");
+
+        // add to other agents stash
+        receiver.itemStash.items[giftItemIndex].quantity += giftQuantity;
+
+        // TODO update reputation
     }
 
     public void GoHome(float duration) {
