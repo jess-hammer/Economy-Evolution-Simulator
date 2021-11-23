@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ChartUtil;
+using TMPro;
 
 public class MySceneDirector : Director
 {
@@ -12,6 +13,7 @@ public class MySceneDirector : Director
     [Space]
     public MyAgent agentPrefab;
     public GameObject agentParent;
+    public TextMeshProUGUI dayNumberObj;
     public Transform cameraTransform;
     public GameObject [] housePrefabs;
     public GameObject [] itemModels; // index correspond to itemName enum number
@@ -169,6 +171,7 @@ public class MySceneDirector : Director
 
             // increase the date
             dayNumber++;
+            dayNumberObj.text = dayNumber.ToString();
             StartCoroutine("RunTimestep");
         }
     }
