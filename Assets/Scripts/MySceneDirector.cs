@@ -25,7 +25,7 @@ public class MySceneDirector : Director
     private float HEIGHT = 0.3f;
     private float HOUSE_HEIGHT = 0f;
     private float HOUSE_DIST = 1f;
-    private int N_DAYS = 10; // number of days in the simulation
+    private int N_DAYS = 20; // number of days in the simulation
 
     protected override void Awake() {
         base.Awake();
@@ -119,7 +119,7 @@ public class MySceneDirector : Director
         return new Vector3(xPos, HEIGHT, zPos);
     }
 
-    //Called each frame
+    // Called each frame
     protected override void Update() {
         base.Update();
         float rotSpeed = 4; //degrees per second
@@ -135,7 +135,7 @@ public class MySceneDirector : Director
         yield return null;
     }
 
-    //Define event actions
+    // Define event actions
     IEnumerator Zoom() { 
         camRig.ZoomTo(20f, duration: 4); 
         yield return new WaitForSeconds(4);
@@ -172,7 +172,6 @@ public class MySceneDirector : Director
             StartCoroutine("RunTimestep");
         }
     }
-
 
     IEnumerator Disappear() {
         for (int i = 0; i < agents.Count; i++) {

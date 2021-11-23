@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class MyAgent : PrimerObject
 {
@@ -13,17 +12,16 @@ public class MyAgent : PrimerObject
     private static float maxReputation = 5;
     private static float minReputation = 0;
     private MySceneDirector mySceneDirector;
+    private Material material;
 
     public Item itemNeeded;
     public float [] opinions;
+    public int selfIndex;
 
-    public Queue<Debt> activeDebts = new Queue<Debt>();
-    public List<Debt> pastDebts = new List<Debt>();
-    public List<Debt> activeCredits = new List<Debt>();
-    public List<Debt> pastCredits = new List<Debt>();
-
-    private Material material;
-    private MyAgent [] neighboursInOrder;
+    // public Queue<Debt> activeDebts = new Queue<Debt>();
+    // public List<Debt> pastDebts = new List<Debt>();
+    // public List<Debt> activeCredits = new List<Debt>();
+    // public List<Debt> pastCredits = new List<Debt>();
 
     public Vector3 meetingPlacePos;
 
@@ -32,10 +30,13 @@ public class MyAgent : PrimerObject
         mySceneDirector = GameObject.Find("Scene Director").GetComponent<MySceneDirector>();
         itemStash = new ItemStash();
         initialiseDaysSinceLastConsumed();
+        initialiseOpinionArray();
+        findSelfIndex();
         
         // set material object
         material = this.gameObject.GetComponentInChildren<MeshRenderer>().materials[0];
         RefreshColor(mySceneDirector.lowReputationColor, mySceneDirector.highReputationColor);
+        
     }
 
     public void RefreshColor(Color col1, Color col2) {
@@ -49,6 +50,22 @@ public class MyAgent : PrimerObject
         daysSinceLastConsumed = new int [n];
         for (int i = 0; i < n; i++) {
             daysSinceLastConsumed[i] = 0;
+        }
+    }
+
+    private void findSelfIndex() {
+        for (int i = 0; i < mySceneDirector.nAgents; i++) {
+            if (mySceneDirector.agents[i] == this) {
+                selfIndex = i;
+                return;
+            }
+        }
+    }
+
+    private void initialiseOpinionArray() {
+        opinions = new float [mySceneDirector.nAgents];
+        for (int i = 0; i < opinions.Length; i++) {
+            opinions[i] = 0;
         }
     }
 
@@ -88,7 +105,7 @@ public class MyAgent : PrimerObject
     }
 
     private IEnumerator executeBehaviour(float duration) {
-        itemNeeded = calculateItemNeeded();
+        // itemNeeded = calculateItemNeeded();
 
         ProduceItems(2, duration/4);
         yield return new WaitForSeconds(duration/4);
@@ -103,6 +120,7 @@ public class MyAgent : PrimerObject
         yield return new WaitForSeconds(duration/4);
 
         ConsumeItems();
+        UpdatePerceivedValues();
     }
 
     public void GiveGifts(float duration) {
@@ -116,6 +134,12 @@ public class MyAgent : PrimerObject
                     // give the gift
                     GiveGift(duration, mySceneDirector.agents[i], giftItemIndex);
             }
+        }
+    }
+
+    public void UpdatePerceivedValues() {
+        for (int i = 0; i < itemStash.items.Length; i++) {
+            itemStash.items[i].CalculatePerceivedValue(daysSinceLastConsumed[i], itemStash.items[i].quantity);
         }
     }
 
@@ -174,7 +198,7 @@ public class MyAgent : PrimerObject
 
     public void GoToRandomMeetingPlace(float duration) {
         Transform [] places = mySceneDirector.meetingPlaceParent.GetComponentsInChildren<Transform>();
-        int randNum = (int)Random.Range(1, places.Length - 1); // not sure if this includes the parent
+        int randNum = (int)Random.Range(0, places.Length - 1);
         meetingPlacePos = places[randNum].position;
 
         Vector3 currPos = this.transform.position;
