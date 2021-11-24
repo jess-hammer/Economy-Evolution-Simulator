@@ -9,7 +9,7 @@ public class MyAgent : PrimerObject
     public Vector3 homePos;
     public float reputation = 0;
 
-    private static float maxReputation = 5;
+    private static float maxReputation = 1;
     private static float minReputation = 0;
     private MySceneDirector mySceneDirector;
     private Material material;
@@ -17,11 +17,6 @@ public class MyAgent : PrimerObject
     public Item itemNeeded;
     public float [] opinions;
     public int selfIndex;
-
-    // public Queue<Debt> activeDebts = new Queue<Debt>();
-    // public List<Debt> pastDebts = new List<Debt>();
-    // public List<Debt> activeCredits = new List<Debt>();
-    // public List<Debt> pastCredits = new List<Debt>();
 
     public Vector3 meetingPlacePos;
 
@@ -70,8 +65,8 @@ public class MyAgent : PrimerObject
     }
 
     public float Sigmoid(float x) {
-        float a = 1.4f;
-        float b = -3f;
+        float a = 0.5f;
+        float b = -4.2f;
         return 1/(1 + Mathf.Pow(2.718f, -a * (x + b)));
     }
 
@@ -121,6 +116,8 @@ public class MyAgent : PrimerObject
 
         ConsumeItems();
         UpdatePerceivedValues();
+        UpdateReputation();
+        RefreshColor(mySceneDirector.lowReputationColor, mySceneDirector.highReputationColor);
     }
 
     public void GiveGifts(float duration) {
@@ -178,7 +175,7 @@ public class MyAgent : PrimerObject
         PrimerObject itemObject = Instantiate(mySceneDirector.itemModels[giftItemIndex], this.transform.position, Quaternion.identity).GetComponent<PrimerObject>();
         itemObject.MoveAndDestroy(receiver.transform.position, 0, duration);
 
-        // actually update the quantities
+        // pick random quantity
         int giftQuantity = Random.Range(1, itemStash.items[giftItemIndex].quantity);
 
         // remove from this agents stash
@@ -187,9 +184,27 @@ public class MyAgent : PrimerObject
             Debug.Log("warning: item quantity is negative");
 
         // add to other agents stash
-        receiver.itemStash.items[giftItemIndex].quantity += giftQuantity;
+        receiver.ReceiveGift(this, giftItemIndex, giftQuantity);
+    }
 
-        // TODO update reputation
+    public void ReceiveGift(MyAgent giver, int giftItemIndex, int giftQuantity) {
+        // add to stash
+        itemStash.items[giftItemIndex].quantity += giftQuantity;
+
+        // calculate perceived value of gift
+        float giftValue = itemStash.items[giftItemIndex].perceivedValue * giftQuantity;
+
+        // update opinion
+        opinions[giver.selfIndex] += Mathf.Lerp(giftValue, 5, 200);
+    }
+
+    public void UpdateReputation() {
+        float sum = 0;
+        for (int i = 0; i < mySceneDirector.nAgents; i++) {
+            if (i != selfIndex)
+                sum += Sigmoid(mySceneDirector.agents[i].opinions[selfIndex]);
+        }
+        reputation = sum / (mySceneDirector.nAgents - 1);
     }
 
     public void GoHome(float duration) {
