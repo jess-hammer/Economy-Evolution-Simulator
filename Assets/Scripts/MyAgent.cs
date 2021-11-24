@@ -118,6 +118,24 @@ public class MyAgent : PrimerObject
         UpdatePerceivedValues();
         UpdateReputation();
         RefreshColor(mySceneDirector.lowReputationColor, mySceneDirector.highReputationColor);
+        if (this.selfIndex == 0) {
+            Debug.Log(this.ToString());
+        }
+    }
+    public override string ToString() {
+        string str = "";
+        str += "Average Reputation: " + reputation;
+        str += "\nOpinion Array: ";
+        str += opinions[0];
+        for (int i = 1; i < opinions.Length; i++) {
+            str += ", " + opinions[i];
+        }
+        for (int i = 0; i < itemStash.items.Length; i++) {
+            str += "\n" + itemStash.items[i].itemName + " :";
+            str += "\n    PerceivedValue: " + itemStash.items[i].perceivedValue;
+            str += "\n    Quantity: " + itemStash.items[i].quantity;
+        }
+        return str;
     }
 
     public void GiveGifts(float duration) {
@@ -127,9 +145,14 @@ public class MyAgent : PrimerObject
             if (mySceneDirector.agents[i].meetingPlacePos == meetingPlacePos) {
                 // randomly pick gift
                 int giftItemIndex = pickGiftItem();
-                if (giftItemIndex >= 0)
-                    // give the gift
-                    GiveGift(duration, mySceneDirector.agents[i], giftItemIndex);
+                if (giftItemIndex >= 0) {
+                    float interactionStatus = HaveInteraction(this, mySceneDirector.agents[i]);
+                    // if the interaction was good, give a gift
+                    if (interactionStatus >= 0.5) {
+                        // give the gift
+                        GiveGift(duration, mySceneDirector.agents[i], giftItemIndex);
+                    }
+                }
             }
         }
     }
@@ -187,6 +210,31 @@ public class MyAgent : PrimerObject
         receiver.ReceiveGift(this, giftItemIndex, giftQuantity);
     }
 
+    ///<summary> Function that returns a float between 0 and 1 depending on agent's opinions of each other. 
+    /// 0.5 indicates interaction went neutral, 1 indicates it went well, 0 indicates it went badly. </summary>
+    public float HaveInteraction(MyAgent agentGiving, MyAgent agentReceiving) {
+        float randNum = Random.Range(0f, 1f);
+        float combinedReputation = Sigmoid(agentGiving.opinions[agentReceiving.selfIndex]) + 
+        Sigmoid(agentReceiving.opinions[agentGiving.selfIndex]);
+        combinedReputation = combinedReputation / 2;
+        combinedReputation = combinedReputation * 0.5f + 0.5f; // make in range 0.5 - 1
+        float interactionValue = distributeNumberAround(randNum, combinedReputation);
+
+        // adjust agents opinion of eachother
+        agentGiving.opinions[agentReceiving.selfIndex] += interactionValue * 2 - 1;
+        agentReceiving.opinions[agentGiving.selfIndex] += interactionValue * 2 - 1;
+        return interactionValue;
+    }
+
+    ///<summary> Function to generate a number (between 0-1) that is biased toward the bias parameter (between 0-1). 
+    /// Basically just a cubic function where the bias parameter determines the height of the graph. </summary>
+    public float distributeNumberAround(float x, float biasToward) {
+        float widthParameter = 1.8f;
+        float positionParameter = 0.9f;
+        int powerParameter = 5;
+        return Mathf.Clamp(Mathf.Pow(x * widthParameter - positionParameter, powerParameter) + biasToward, 0, 1);
+    }
+
     public void ReceiveGift(MyAgent giver, int giftItemIndex, int giftQuantity) {
         // add to stash
         itemStash.items[giftItemIndex].quantity += giftQuantity;
@@ -194,8 +242,8 @@ public class MyAgent : PrimerObject
         // calculate perceived value of gift
         float giftValue = itemStash.items[giftItemIndex].perceivedValue * giftQuantity;
 
-        // update opinion
-        opinions[giver.selfIndex] += Mathf.Lerp(giftValue, 5, 200);
+        // update opinion depending on perceived value of gift
+        opinions[giver.selfIndex] += Mathf.Clamp(Mathf.Lerp(giftValue, 5, 200), -3, 3);
     }
 
     public void UpdateReputation() {
