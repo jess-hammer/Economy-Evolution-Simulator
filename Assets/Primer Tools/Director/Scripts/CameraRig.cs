@@ -23,7 +23,7 @@ public class CameraRig : PrimerObject
         camObject = cam.gameObject.AddComponent<PrimerObject>();
     }
     public void GoToStandardPositions() {
-        cam.transform.localPosition = new Vector3 (0, 0, -20); // was -10
+        cam.transform.localPosition = new Vector3 (0, 0.75f, -25); // was -10
         cam.transform.localRotation = Quaternion.identity;
 
         transform.localPosition = new Vector3(0, 1, 0);

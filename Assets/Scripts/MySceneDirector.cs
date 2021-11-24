@@ -67,7 +67,7 @@ public class MySceneDirector : Director
         }
     }
 
-    private void updateGraph() {
+    private void updateBarGraph() {
         // get number of item types per agent (assumes its the same for all)
         int nItems = agents[0].itemStash.items.Length;
 
@@ -86,6 +86,29 @@ public class MySceneDirector : Director
         for (int i = 0; i < nItems; i++) {
             averageValues[i] = averageValues[i]/nAgents;
             chartData.series[0].data[i] = new Data(averageValues[i]);
+        }
+        chartData.gameObject.GetComponent<Chart>().UpdateChart();
+    }
+
+    private void updateLineGraph() {
+        // get number of item types per agent (assumes its the same for all)
+        int nItems = agents[0].itemStash.items.Length;
+
+        // initialise array to store the averages
+        float [] averageValues = new float [nItems];
+        SetZero(averageValues);
+
+        // get all average perceived values
+        for (int i = 0; i < nAgents; i++) {
+            for (int j = 0; j < nItems; j++) {
+                averageValues[j] += agents[i].itemStash.items[j].perceivedValue;
+            }
+        }
+
+        // apply values to the graph
+        for (int i = 0; i < nItems; i++) {
+            averageValues[i] = averageValues[i]/nAgents;
+            chartData.series[i].data.Add(new Data(averageValues[i], dayNumber));
         }
         chartData.gameObject.GetComponent<Chart>().UpdateChart();
     }
@@ -129,7 +152,7 @@ public class MySceneDirector : Director
     }
     
     IEnumerator Appear() {
-        updateGraph();
+        updateLineGraph();
         chartData.gameObject.GetComponent<PrimerObject>().ScaleUpFromZero();
         for (int i = 0; i < agents.Count; i++) {
             agents[i].ScaleUpFromZero();
@@ -166,8 +189,8 @@ public class MySceneDirector : Director
         // if we have not reached the end of the simulation...
         if (dayNumber < N_DAYS) {
 
-            // update the bar graph
-            updateGraph();
+            // update graph
+            updateLineGraph();
 
             // increase the date
             dayNumber++;

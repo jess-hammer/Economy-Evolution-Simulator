@@ -156,7 +156,7 @@ public class MyAgent : PrimerObject
 
         // pick item if have enough
         for (int i = 0; i < indexArray.Length; i++) {
-            if (itemStash.items[indexArray[i]].quantity > 0) {
+            if (itemStash.items[indexArray[i]].quantity > 1) {
                 return indexArray[i];
             }
         }

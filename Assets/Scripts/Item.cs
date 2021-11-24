@@ -53,7 +53,7 @@ public class Item
         int daysLeft = consumeRate - daysSinceLastConsumed;
         float interpolation = Mathf.Clamp(Mathf.InverseLerp(5f, -5f, daysLeft), 0, 1); // 1 = desperately need, 0 = eh still got time left
         
-        if (qty > 1)
+        if (qty > 0)
             perceivedValue += interpolation - 0.5f; // can go down
         else
             perceivedValue += interpolation; // only goes up
