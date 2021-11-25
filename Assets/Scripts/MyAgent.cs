@@ -141,12 +141,14 @@ public class MyAgent : PrimerObject
     public void GiveGifts(float duration) {
         // loop through all the Agents
         for (int i = 0; i < mySceneDirector.nAgents; i++) {
-            // if the agents are at the same meeting place
-            if (mySceneDirector.agents[i].meetingPlacePos == meetingPlacePos) {
+            // if the agents are at the same meeting place and agent is not itself
+            if (mySceneDirector.agents[i].meetingPlacePos == meetingPlacePos 
+            && mySceneDirector.agents[i].selfIndex != selfIndex) {
                 // randomly pick gift
                 int giftItemIndex = pickGiftItem();
                 if (giftItemIndex >= 0) {
                     float interactionStatus = HaveInteraction(this, mySceneDirector.agents[i]);
+                    attemptIncreaseValue(giftItemIndex, mySceneDirector.agents[i], interactionStatus);
                     // if the interaction was good, give a gift
                     if (interactionStatus >= 0.5) {
                         // give the gift
@@ -217,13 +219,22 @@ public class MyAgent : PrimerObject
         float combinedReputation = Sigmoid(agentGiving.opinions[agentReceiving.selfIndex]) + 
         Sigmoid(agentReceiving.opinions[agentGiving.selfIndex]);
         combinedReputation = combinedReputation / 2;
-        combinedReputation = combinedReputation * 0.5f + 0.5f; // make in range 0.5 - 1
+        combinedReputation = combinedReputation * 0.5f + 0.4f; // make in range 0.5 - 1
         float interactionValue = distributeNumberAround(randNum, combinedReputation);
 
         // adjust agents opinion of eachother
         agentGiving.opinions[agentReceiving.selfIndex] += interactionValue * 2 - 1;
         agentReceiving.opinions[agentGiving.selfIndex] += interactionValue * 2 - 1;
         return interactionValue;
+    }
+
+    private void attemptIncreaseValue(int itemIndex, MyAgent receiver, float chanceValue) {
+        if (chanceValue > 0.6) {
+            receiver.itemStash.items[itemIndex].perceivedValue += 1;
+        }
+        if (chanceValue < 0.4) {
+            receiver.itemStash.items[itemIndex].perceivedValue -= 1;
+        }
     }
 
     ///<summary> Function to generate a number (between 0-1) that is biased toward the bias parameter (between 0-1). 
@@ -299,13 +310,5 @@ public class MyAgent : PrimerObject
             daysSinceLastConsumed[i] += 1;
         }
     }
-}
-
-public class Debt {
-    public int date;
-    public MyAgent debtor;
-    public MyAgent creditor;
-    public float value;
-    public bool isRepayed;
 }
 

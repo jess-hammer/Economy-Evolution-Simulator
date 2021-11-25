@@ -27,7 +27,7 @@ public class MySceneDirector : Director
     private float HEIGHT = 0.3f;
     private float HOUSE_HEIGHT = 0f;
     private float HOUSE_DIST = 1f;
-    private int N_DAYS = 20; // number of days in the simulation
+    private int N_DAYS = 50; // number of days in the simulation
 
     protected override void Awake() {
         base.Awake();
