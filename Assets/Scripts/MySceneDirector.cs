@@ -27,7 +27,7 @@ public class MySceneDirector : Director
     private float HEIGHT = 0.3f;
     private float HOUSE_HEIGHT = 0f;
     private float HOUSE_DIST = 1f;
-    private int N_DAYS = 50; // number of days in the simulation
+    private int N_DAYS = 100; // number of days in the simulation
 
     protected override void Awake() {
         base.Awake();
@@ -196,9 +196,9 @@ public class MySceneDirector : Director
 
     IEnumerator RunTimestep() {
         for (int i = 0; i < agents.Count; i++) {
-            agents[i].ExecuteBehaviour(3f);
+            agents[i].ExecuteBehaviour(1f);
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         
         // if we have not reached the end of the simulation...
         if (dayNumber < N_DAYS) {

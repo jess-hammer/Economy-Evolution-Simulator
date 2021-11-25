@@ -100,7 +100,7 @@ public class MyAgent : PrimerObject
     }
 
     private IEnumerator executeBehaviour(float duration) {
-        ProduceItems(3, duration/4);
+        ProduceItems(2, duration/4);
         yield return new WaitForSeconds(duration/4);
         
         GoToRandomMeetingPlace(duration/4);
@@ -116,9 +116,9 @@ public class MyAgent : PrimerObject
         UpdatePerceivedValues();
         UpdateReputation();
         RefreshColor(mySceneDirector.lowReputationColor, mySceneDirector.highReputationColor);
-        if (this.selfIndex == 0) {
-            Debug.Log(this.ToString());
-        }
+        // if (this.selfIndex == 0) {
+        //     Debug.Log(this.ToString());
+        // }
     }
     public override string ToString() {
         string str = "";
