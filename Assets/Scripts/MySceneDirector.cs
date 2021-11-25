@@ -110,7 +110,21 @@ public class MySceneDirector : Director
             averageValues[i] = averageValues[i]/nAgents;
             chartData.series[i].data.Add(new Data(averageValues[i], dayNumber));
         }
+        // set graph back to visible on day 2, needed to be done to avoid errors
+        if (dayNumber == 1) {
+            setGraphSeriesVisibility(true);
+        }
         chartData.gameObject.GetComponent<Chart>().UpdateChart();
+    }
+
+    private void setGraphSeriesVisibility(bool value) {
+        // get number of item types per agent (assumes its the same for all)
+        int nItems = agents[0].itemStash.items.Length;
+
+        // apply values to the graph
+        for (int i = 0; i < nItems; i++) {
+            chartData.series[i].show = value;
+        }
     }
 
     public void SetZero(float [] array) {
@@ -207,18 +221,9 @@ public class MySceneDirector : Director
         yield return null;
     }
 
-    //Construct schedule
+    // Construct schedule
     protected override void DefineSchedule() {
-        /*
-        If flexible is true, blocks run as long (or not) as they need to,
-        with later blocks waiting until StopWaiting is called. Then,
-        the next block starts on the next frame and all later block timings
-        are shifted by the same amount.
-        Useful for simulations whose duration is not predetermined
-        */
         new SceneBlock(0f, Appear);
         new SceneBlock(5f, RunTimestep);
-        
-        // new SceneBlock(17f, Disappear);
     }
 }

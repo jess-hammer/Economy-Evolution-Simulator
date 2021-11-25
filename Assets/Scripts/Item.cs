@@ -46,6 +46,7 @@ public class Item
     }
 
     // TODO consider item quantity?
+    ///<summary> Function to recalculate the perceived value based on whether the agent currently needs it or not </summary>
     public void CalculatePerceivedValue(int daysSinceLastConsumed, int qty) {
         // use days since last consumed to determine value
         int daysLeft = consumeRate - daysSinceLastConsumed;
@@ -55,7 +56,6 @@ public class Item
             perceivedValue += interpolation - 0.5f; // can go down
         else
             perceivedValue += interpolation; // only goes up
-        // todo bonus coming from a gift
 
         // clamp to zero
         if (perceivedValue < 0) {
@@ -66,15 +66,15 @@ public class Item
 
 public class ItemStash {
     public Item [] items = new Item[] {
-        new Item(ItemName.VEGETABLE, 1, 0, 0.2f, 0.5f, (int)Random.Range(2f, 4f), Random.Range(0.5f, 1f)),
-        new Item(ItemName.GRAIN, 1, 0, 0.2f, 2, (int)Random.Range(2f, 4f), Random.Range(0.5f, 1f)),
-        new Item(ItemName.MEAT, 1, 0, 0.7f, 2, (int)Random.Range(3f, 6f), Random.Range(0.5f, 1f)),
-        new Item(ItemName.TRINKET, 0, 0, 0.8f, 0.5f, (int)Random.Range(7f, 15f), Random.Range(0, 0.5f)),
+        new Item(ItemName.VEGETABLE, 1, 0, 0.2f, 0.5f, (int)Random.Range(3f, 6f), Random.Range(0.75f, 1f)),
+        new Item(ItemName.GRAIN, 1, 0, 0.2f, 2, (int)Random.Range(3f, 6f), Random.Range(0.75f, 1f)),
+        new Item(ItemName.MEAT, 1, 0, 0.7f, 2, (int)Random.Range(3f, 6f), Random.Range(0.75f, 1f)),
+        new Item(ItemName.TRINKET, 0, 0, 0.8f, 0.5f, (int)Random.Range(7f, 15f), Random.Range(0.25f, 0.75f)),
         new Item(ItemName.PEBBLE, 0, 0, 0, 0.1f, (int)Random.Range(1000f, 2000f), 1),
-        new Item(ItemName.TOOL, 0, 1, 0.1f, 10, (int)Random.Range(5f, 11f), Random.Range(0, 0.5f)),
-        new Item(ItemName.FURNITURE, 0.2f, 0.4f, 0.2f, 30, (int)Random.Range(7f, 15f), Random.Range(0, 0.5f)),
-        new Item(ItemName.CLOTHING, 0.2f, 0.4f, 0.2f, 1, (int)Random.Range(5f, 11f), Random.Range(0, 0.5f)),
-        new Item(ItemName.TOILET_PAPER, 0.2f, 0.1f, 0f, 0.1f, (int)Random.Range(4f, 8f), Random.Range(0, 0.5f))
+        new Item(ItemName.TOOL, 0, 1, 0.1f, 10, (int)Random.Range(7f, 11f), Random.Range(0.25f, 0.6f)),
+        new Item(ItemName.FURNITURE, 0.2f, 0.4f, 0.2f, 30, (int)Random.Range(10f, 16f), Random.Range(0.2f, 0.5f)),
+        new Item(ItemName.CLOTHING, 0.2f, 0.4f, 0.2f, 1, (int)Random.Range(5f, 11f), Random.Range(0.25f, 0.75f)),
+        new Item(ItemName.TOILET_PAPER, 0.2f, 0.1f, 0f, 0.1f, (int)Random.Range(5f, 8f), Random.Range(0.25f, 0.75f))
     };
 }
 

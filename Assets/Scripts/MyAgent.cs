@@ -76,7 +76,7 @@ public class MyAgent : PrimerObject
 
     private IEnumerator produceItems(int nTimes, float duration) {
         for (int i = 0; i < nTimes; i++) {
-            int itemIndex = (int)Random.Range(0, itemStash.items.Length - 1);
+            int itemIndex = (int)Random.Range(0, itemStash.items.Length); // don't need -1 cuz casting to int rounds down
             float randNum = Random.Range(0f, 1f);
             
             Item item = itemStash.items[itemIndex];
@@ -100,9 +100,7 @@ public class MyAgent : PrimerObject
     }
 
     private IEnumerator executeBehaviour(float duration) {
-        // itemNeeded = calculateItemNeeded();
-
-        ProduceItems(2, duration/4);
+        ProduceItems(3, duration/4);
         yield return new WaitForSeconds(duration/4);
         
         GoToRandomMeetingPlace(duration/4);
@@ -134,6 +132,7 @@ public class MyAgent : PrimerObject
             str += "\n" + itemStash.items[i].itemName + " :";
             str += "\n    PerceivedValue: " + itemStash.items[i].perceivedValue;
             str += "\n    Quantity: " + itemStash.items[i].quantity;
+            str += "\n    Days left until needed: " + (itemStash.items[i].consumeRate - daysSinceLastConsumed[i]).ToString();
         }
         return str;
     }
@@ -279,24 +278,6 @@ public class MyAgent : PrimerObject
         Vector3 stopPos = new Vector3(meetingPlacePos.x, this.transform.position.y, meetingPlacePos.z);
         stopPos = currPos + ((stopPos - currPos) * 0.9f);
         WalkTo(stopPos, duration: duration);
-    }
-
-    public Item calculateItemNeeded() {
-        Item currItem = null;
-        for (int i = 0; i < itemStash.items.Length; i++) {
-            if (daysSinceLastConsumed[i] > itemStash.items[i].consumeRate && itemStash.items[i].quantity <= 0) {
-                if (currItem != null) {
-                    if (itemStash.items[i].inherentValue > currItem.inherentValue) {
-                        currItem = itemStash.items[i];
-                    }
-                } else {
-                    currItem = itemStash.items[i];
-                }
-            }
-        }
-        if (currItem == null)
-            return null;
-        return currItem;
     }
 
     public void ConsumeItems() {
