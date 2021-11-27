@@ -7,10 +7,13 @@ using TMPro;
 public class MySceneDirector : Director
 {
     [Space]
-    public int dayNumber = 0;
     public int nAgents;
+    public int nDays = 100; // number of days in the simulation
+    public int itemProductionAmount = 2;
+    public float timestepDuration = 1f;
     
     [Space]
+    public int dayNumber = 0;
     public MyAgent agentPrefab;
     public GameObject agentParent;
     public TextMeshProUGUI dayNumberObj;
@@ -27,10 +30,20 @@ public class MySceneDirector : Director
     private float HEIGHT = 0.3f;
     private float HOUSE_HEIGHT = 0f;
     private float HOUSE_DIST = 1f;
-    private int N_DAYS = 100; // number of days in the simulation
 
     protected override void Awake() {
         base.Awake();
+
+        // set parameters
+        GameObject parametersObject = GameObject.FindWithTag("Parameters");
+        if (parametersObject != null) {
+            Parameters parameters = parametersObject.GetComponent<Parameters>();
+            nAgents = parameters.nAgents;
+            nDays = parameters.nDays;
+            itemProductionAmount = parameters.itemProductionAmount;
+            timestepDuration = parameters.timestepDuration;
+        }
+
         spawnBlobs(nAgents);
         spawnHouses();
         camRig.GoToStandardPositions();
@@ -40,6 +53,8 @@ public class MySceneDirector : Director
             agents[i].transform.localScale = Vector3.zero;
         }
         chartData.gameObject.transform.localScale = Vector3.zero;
+
+        
     }
 
     protected void spawnBlobs(int n) {
@@ -196,12 +211,12 @@ public class MySceneDirector : Director
 
     IEnumerator RunTimestep() {
         for (int i = 0; i < agents.Count; i++) {
-            agents[i].ExecuteBehaviour(1f);
+            agents[i].ExecuteBehaviour(timestepDuration);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(timestepDuration);
         
         // if we have not reached the end of the simulation...
-        if (dayNumber < N_DAYS) {
+        if (dayNumber < nDays) {
 
             // update graph
             updateLineGraph();
