@@ -17,8 +17,6 @@ public class MyAgent : PrimerObject
     public float [] opinions;
     public int selfIndex;
 
-    public bool considerWeight;
-
     public Vector3 meetingPlacePos;
 
     // Start is called before the first frame update
@@ -176,7 +174,7 @@ public class MyAgent : PrimerObject
         // pick item if have enough
         for (int i = 0; i < indexArray.Length; i++) {
             if (itemStash.items[indexArray[i]].quantity > 1) {
-                if (!considerWeight) {
+                if (mySceneDirector.ignoreWeight) {
                     return indexArray[i];
                 } else if (isConvenientGift(itemStash.items[indexArray[i]].weightValue)) {
                     return indexArray[i];

@@ -13,13 +13,20 @@ public class UpdateParameters : MonoBehaviour {
 	{
 		parameters = GameObject.FindWithTag("Parameters").GetComponent<Parameters>();
 		if (this.TryGetComponent<Slider> (out Slider slider)) {
-			slider.value = parameters.getValue (nameToUpdate);
+			slider.value = parameters.getValueFloat (nameToUpdate);
+		} else if (this.TryGetComponent<Toggle> (out Toggle toggle)) {
+			toggle.isOn = parameters.getValueBool (nameToUpdate);
 		} else {
 			Debug.Log (this.name + "is not a slider lol");
 		}
 	}
 
 	public void UpdatePref(float value)
+	{
+		parameters.updateValue (nameToUpdate, value);
+	}
+
+	public void UpdatePref(bool value)
 	{
 		parameters.updateValue (nameToUpdate, value);
 	}

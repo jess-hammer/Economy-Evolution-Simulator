@@ -11,6 +11,7 @@ public class MySceneDirector : Director
     public int nDays = 100; // number of days in the simulation
     public int itemProductionAmount = 2;
     public float timestepDuration = 1f;
+    public bool ignoreWeight = false;
     
     [Space]
     public int dayNumber = 0;
@@ -44,6 +45,7 @@ public class MySceneDirector : Director
             nDays = parameters.nDays;
             itemProductionAmount = parameters.itemProductionAmount;
             timestepDuration = parameters.timestepDuration;
+            ignoreWeight = parameters.ignoreWeight;
         }
 
         spawnBlobs(nAgents);

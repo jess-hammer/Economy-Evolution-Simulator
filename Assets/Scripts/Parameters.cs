@@ -10,7 +10,9 @@ public class Parameters : MonoBehaviour
 	public int nAgents = 20;
     public int nDays = 100; // number of days in the simulation
     public int itemProductionAmount = 2;
-    public float timestepDuration = 1f;
+    public float timestepDuration = 3f;
+
+	public bool ignoreWeight = false;
 
 	private static Parameters self;
 
@@ -58,8 +60,19 @@ public class Parameters : MonoBehaviour
 			break;
 		}
 	}
+	public void updateValue (ParameterName parameter, bool value)
+	{
+		switch (parameter) {
+		case ParameterName.IGNORE_WEIGHT:
+			ignoreWeight = value;
+			break;
+		default:
+			Debug.Log ("Update value failed");
+			break;
+		}
+	}
 
-	public float getValue (ParameterName parameter)
+	public float getValueFloat (ParameterName parameter)
 	{
 		switch (parameter) {
 		case ParameterName.N_AGENTS:
@@ -76,11 +89,23 @@ public class Parameters : MonoBehaviour
 		}
 		return -1;
 	}
+	public bool getValueBool (ParameterName parameter)
+	{
+		switch (parameter) {
+		case ParameterName.IGNORE_WEIGHT:
+			return ignoreWeight;
+		default:
+			Debug.Log ("Get value failed");
+			break;
+		}
+		return false;
+	}
 }
 
 public enum ParameterName {
 	N_AGENTS,
     N_DAYS,
     ITEM_PRODUCTION_AMOUNT,
-    TIMESTEP_DURATION
+    TIMESTEP_DURATION,
+	IGNORE_WEIGHT
 }
