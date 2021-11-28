@@ -11,6 +11,8 @@ public class AgentSelectorController : MonoBehaviour
     public TextMeshProUGUI scrollViewText;
     public Camera camera;
 
+    public GameObject tip;
+
     private MyAgent agentClicked = null;
     void Start()
     {
@@ -38,6 +40,7 @@ public class AgentSelectorController : MonoBehaviour
                         arrow.gameObject.SetActive(true);
                     UpdateScrollViewText();
                     scrollViewObj.SetActive(true);
+                    tip.SetActive(false);
                 }
             }
         }
