@@ -25,6 +25,8 @@ public class MySceneDirector : Director
     public ChartData chartData;
     public GameObject meetingPlaceParent;
 
+    public AgentSelectorController agentSelectorController;
+
     public List<MyAgent> agents = null;
     private float RADIUS = 4f;
     private float HEIGHT = 0.3f;
@@ -224,6 +226,7 @@ public class MySceneDirector : Director
             // increase the date
             dayNumber++;
             dayNumberObj.text = dayNumber.ToString();
+            agentSelectorController.UpdateScrollViewText();
             StartCoroutine("RunTimestep");
         }
     }

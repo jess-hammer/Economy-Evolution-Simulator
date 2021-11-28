@@ -14,9 +14,10 @@ public class MyAgent : PrimerObject
     private MySceneDirector mySceneDirector;
     private Material material;
 
-    public Item itemNeeded;
     public float [] opinions;
     public int selfIndex;
+
+    public bool considerWeight;
 
     public Vector3 meetingPlacePos;
 
@@ -100,7 +101,7 @@ public class MyAgent : PrimerObject
     }
 
     private IEnumerator executeBehaviour(float duration) {
-        ProduceItems(2, duration/4);
+        ProduceItems(mySceneDirector.itemProductionAmount, duration/4);
         yield return new WaitForSeconds(duration/4);
         
         GoToRandomMeetingPlace(duration/4);
@@ -116,21 +117,19 @@ public class MyAgent : PrimerObject
         UpdatePerceivedValues();
         UpdateReputation();
         RefreshColor(mySceneDirector.lowReputationColor, mySceneDirector.highReputationColor);
-        // if (this.selfIndex == 0) {
-        //     Debug.Log(this.ToString());
-        // }
     }
+
     public override string ToString() {
         string str = "";
         str += "Average Reputation: " + reputation;
         str += "\nOpinion Array: ";
-        str += opinions[0];
+        str += opinions[0].ToString("F2");
         for (int i = 1; i < opinions.Length; i++) {
-            str += ", " + opinions[i];
+            str += ", " + opinions[i].ToString("F2");
         }
         for (int i = 0; i < itemStash.items.Length; i++) {
             str += "\n" + itemStash.items[i].itemName + " :";
-            str += "\n    PerceivedValue: " + itemStash.items[i].perceivedValue;
+            str += "\n    PerceivedValue: " + itemStash.items[i].perceivedValue.ToString("F2");
             str += "\n    Quantity: " + itemStash.items[i].quantity;
             str += "\n    Days left until needed: " + (itemStash.items[i].consumeRate - daysSinceLastConsumed[i]).ToString();
         }
@@ -165,7 +164,6 @@ public class MyAgent : PrimerObject
     }
 
     // TODO pick gifts based on actual logic, not randomness?
-    // TODO consider weight and distance?
     private int pickGiftItem() {
         // initialise array
         int [] indexArray = new int [itemStash.items.Length];
@@ -178,10 +176,29 @@ public class MyAgent : PrimerObject
         // pick item if have enough
         for (int i = 0; i < indexArray.Length; i++) {
             if (itemStash.items[indexArray[i]].quantity > 1) {
-                return indexArray[i];
+                if (!considerWeight) {
+                    return indexArray[i];
+                } else if (isConvenientGift(itemStash.items[indexArray[i]].weightValue)) {
+                    return indexArray[i];
+                }
             }
         }
         return -1;
+    }
+
+    private bool isConvenientGift(float giftWeight) {
+        float distToHome = Vector3.Distance(this.homePos, this.meetingPlacePos);
+        float MID_WEIGHT_THRESHOLD = 5f; // in kg
+        float FAR_WEIGHT_THRESHOLD = 1f; // in kg
+
+        if (distToHome < 3) {
+            return true;
+        } else if (distToHome < 5.31 && giftWeight < MID_WEIGHT_THRESHOLD) {
+            return true;
+        } else if (giftWeight < FAR_WEIGHT_THRESHOLD) {
+            return true;
+        }
+        return false;
     }
     
     void Shuffle(int[] array) {
