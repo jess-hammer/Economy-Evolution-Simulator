@@ -1,7 +1,7 @@
 # Economy Evolution Simulator
 
 <p align="center">
-  <img src="Images/SimulationScreenshot" width="350" title="Screenshot of simulation">
+  <img src="Images/SimulationScreenshot.png" width="600" title="Screenshot of simulation">
 </p>
 
 ## Cloning
