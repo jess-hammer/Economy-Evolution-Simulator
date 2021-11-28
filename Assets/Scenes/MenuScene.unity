@@ -2274,7 +2274,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1678986765}
   m_HandleRect: {fileID: 1678986764}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3786,8 +3786,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 627.65, y: -42.465}
-  m_SizeDelta: {x: 1207.3, y: 40.93}
+  m_AnchoredPosition: {x: 125.665, y: -42.465}
+  m_SizeDelta: {x: 203.33, y: 40.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283624594
 MonoBehaviour:
@@ -3844,7 +3844,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4197,7 +4197,7 @@ RectTransform:
   m_Father: {fileID: 774015258}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.42392486}
+  m_AnchorMin: {x: 0, y: 0.7957185}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -4478,8 +4478,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0001, y: -0.00001502}
-  m_SizeDelta: {x: -26.01233, y: 1156.51}
+  m_AnchoredPosition: {x: 0.0019531, y: 0.0013}
+  m_SizeDelta: {x: -0.0020752, y: 3117.22}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1508955229
 MonoBehaviour:
@@ -4493,7 +4493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
+  m_HorizontalFit: 0
   m_VerticalFit: 2
 --- !u!114 &1508955230
 MonoBehaviour:
@@ -4512,11 +4512,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 22
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -4611,8 +4611,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1365089082}
   m_HandleRect: {fileID: 1365089081}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.57607514
+  m_Value: 0.9999994
+  m_Size: 0.2042815
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5016,8 +5016,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 627.63464, y: -609.72}
-  m_SizeDelta: {x: 1207.2695, y: 1093.58}
+  m_AnchoredPosition: {x: 661.48303, y: -1590.0751}
+  m_SizeDelta: {x: 1274.9661, y: 3054.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1842474878
 MonoBehaviour:
@@ -5039,26 +5039,67 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The simulation:\nInitial setup\n- Each agent has a home and is positioned
-    somewhere in the environment\n- Each item has a chance of being produced\n- Each
-    agent has a reputation, which is initialised to zero\nEach time-step\n- Agents
-    produce items\n- Agents recalculate perceived values, based off their current
-    needs and also what they currently have\n- If an agent doesn\u2019t have something
-    they need, they will go seek someone who has the item they want. The higher the
-    reputation, the more likely the other agent will agree.\n- If an agent has a
-    debt, they will go out and repay the debt. Repaying a debt will cause their reputation
-    to go up only if the perceived value of an item is above a threshold, otherwise,
-    it goes down.\n- If an agent has no debts, they will go out gift giving randomly.
-    The further out an agent is from home, the lighter the gift has to be.\n- Recalculate
-    reputation: Reputation goes down by a bit each time-step a debt is not fulfilled\n-
-    Agents consume items at a fixed rate\n\nButton to rerun simulation?\nButton to
-    start simulation?\nAdd trade rates in the graph too?\n\nIdeas:\nTime penalty
-    for not repaying gift (e.g. reputation goes down the longer debt is not repaid,
-    or alternatively an expiry date) - could be based off reputation\nHow to value
-    an item - hierarchy of needs? Some people are more materialistic than others\nValuing
-    of gifts - guessing what the other creature values the item at?\n\nParameters
-    to add:\nTime it takes to run each day\nNumber of agents\nNumber of items produced
-    per day\n\nTodo:\nAfter a certain amount of times, reputation won\u2019t change?"
+  m_text: "Items\n\nThis model attempts to simulate the formation of a currency,
+    by determining whether the value of an item that has no inherent value (in our
+    case, a pebble), can become valued over time. \n\nThere is an assortment of hard-coded
+    items in this simulation (see more details at the bottom). Each agent has a need
+    for these items at different rates. For example, agents want to have vegetables
+    around every 3 days, and want to have new furniture around every 10 days. Depending
+    on how desperate the agent is for a particular item, the item\u2019s perceived
+    value will change. For example, if an agent hasn\u2019t obtained any vegetables
+    for 6 days, but it wants one every 3 days, then it will value the item more.
+    Then, its perceived value of the item will continue rising if it never obtains
+    one.\n\nThe quantity also affects how the agents value items. If an agent has
+    a surplus of one item, its perceived value of that item can go down (if it doesn\u2019t
+    have a need for that item soon).\n\nEach agent also has a chance to produce up
+    to a certain number (default 2) of random items each day. Some items will have
+    a smaller chance of being produced than others. For example, pebbles have a 100%
+    chance of being produced, but furniture only has a 20%-50% chance of being produced
+    (some agents may have a higher chance than others).\n\nReputation\n\nEach agent
+    has an opinion of all the other agents. The opinion is then mapped onto a sigmoid
+    function to provide its reputation. The purpose of the sigmoid function is to
+    clamp the reputation from 0-1, but also to provide a more realistic way of forming
+    reputation than what a linear function would do. This reputation value affects
+    the colour of the agents. A reputation of 0 will make the agent appear grey,
+    while a reputation of 1 will make it appear gold.\n\nThe reputation of an agent
+    can also affect the way items are valued. If an agent has a high reputation it
+    has a good chance to persuade another agent that the gift it is giving is worth
+    a bit more. However, if an agent has a reputation that is not so good, there
+    is a chance that their conversation might go badly and thus the recipient of
+    the gift will value the item slightly less. \n\nTHE IMPORTANT PART: what actually
+    happens each day?\n\nA day in the life goes as follows:\n1. Each agent is chilling
+    at home.\n2. Each agent picks a number of random items (default 2) and attempts
+    to produce them according to the items production chance. \n3. Each agent travels
+    to a random square on the map (these are their meeting places).\n4. Each agent
+    will attempt to give a gift to every other agent standing on the same square.
+    An agent will pick the gift randomly, and will only gift an item that it has
+    a surplus of. If \u201CIgnore weights\u201D is off (it\u2019s off by default),
+    agents can only give gifts that have a SMALL weight if they are on a square that
+    is far away from home. If the agent giving the gift has a high enough reputation,
+    there is a chance that the receiver\u2019s perceived value of the gift will increase.\n5.
+    Each agent heads back home.\n6. Each agent \u201Cuses up\u201D some items according
+    to its needs.\n7. Each agent recalculates its perceived value of each item.\n8.
+    Each agent has its colour updated, depending on its average reputation. \n\nFurther
+    details of each item:\nVegetable\n    Starting value: 10.8\n    Weight: 2kg\n   
+    Agent need frequency range: random between 3 - 6 days\n    Production chance
+    range:  random between 75% - 100%\nGrain\n    Starting value: 10.8\n    Weight:
+    2kg\n    Agent need frequency range: random between 3 - 6 days\n    Production
+    chance range:  random between 75% - 100%\nMeat\n    Starting value: 12.7\n   
+    Weight: 2kg\n    Agent need frequency range: random between 3 - 6 days\n    Production
+    chance range:  random between 75% - 100%\nTrinket\n    Starting value: 3.2\n   
+    Weight: 0.5kg\n    Agent need frequency range: random between 7 - 15 days\n   
+    Production chance range:  random between 25% - 75%\nPebble\n    Starting value:
+    0\n    Weight: 0.1kg\n    Agent need frequency range: random between 1000 - 2000
+    days (just used a high number because agents never really *need* pebbles)\n   
+    Production chance range: 100%\nTool\n    Starting value: 7.4\n    Weight: 10kg\n   
+    Agent need frequency range: random between 7 - 11 days\n    Production chance
+    range: random between 25% - 60%\nFurniture\n    Starting value: 5.6\n    Weight:
+    30kg\n    Agent need frequency range: random between 10 - 16 days\n    Production
+    chance range: random between 20% - 50%\nClothing\n    Starting value: 5.6\n   
+    Weight: 5kg\n    Agent need frequency range: random between 5 - 11 days\n   
+    Production chance range: random between 25% - 75%\nToilet paper\n    Starting
+    value: 2.7\n    Weight: 1kg\n    Agent need frequency range: random between 5
+    - 8 days\n    Production chance range: random between 25% - 75%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bd810f1cbcb0f446a8f5a31453e243f, type: 2}
   m_sharedMaterial: {fileID: 21539420542967178, guid: 4bd810f1cbcb0f446a8f5a31453e243f,
@@ -5122,7 +5163,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.84530646, y: 0.7464143, z: -0.1953201, w: 0}
+  m_margin: {x: 0.84530646, y: 0.7464143, z: 13.726228, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
