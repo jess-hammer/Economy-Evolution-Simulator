@@ -7,10 +7,11 @@ using UnityEngine.UI;
 
 public class UpdateParameters : MonoBehaviour {
 	public ParameterName nameToUpdate;
-	public Parameters parameters;
+	private Parameters parameters;
 
 	private void Start ()
 	{
+		parameters = GameObject.FindWithTag("Parameters").GetComponent<Parameters>();
 		if (this.TryGetComponent<Slider> (out Slider slider)) {
 			slider.value = parameters.getValue (nameToUpdate);
 		} else {

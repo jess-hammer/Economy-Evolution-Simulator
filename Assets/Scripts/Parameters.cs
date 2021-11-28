@@ -12,6 +12,15 @@ public class Parameters : MonoBehaviour
     public int itemProductionAmount = 2;
     public float timestepDuration = 1f;
 
+	private static Parameters self;
+
+	void Awake() {
+		if (self == null) {
+			self = this;
+		} else {
+			Destroy(this.gameObject);
+		}
+	}
 	public bool isValid()
 	{
 		if (nDays <= 2) {
